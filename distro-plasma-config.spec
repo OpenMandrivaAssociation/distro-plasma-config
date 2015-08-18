@@ -9,9 +9,14 @@ Source0:	kdeglobals
 Source1:	kwinrc
 BuildRequires:	cmake(ECM)
 Requires:	breeze
+Provides:	kde4-config-file
+Provides:	distro-kde4-config-OpenMandriva = 2015.0
+Provides:	distro-kde4-config-OpenMandriva-common = 2015.0
+Obsoletes:	distro-kde4-config-OpenMandriva < 2015.0
+Obsoletes:	distro-kde4-config-OpenMandriva-common < 2015.0
+Provides:	mandriva-kde4-config = 2014.0
+Obsoletes:	mandriva-kde4-config < 2014.0
 BuildArch:	noarch
-Conflicts:	distro-kde4-config-OpenMandriva < 2015.0
-Conflicts:	distro-kde4-config-OpenMandriva-common < 2015.0
 
 %description
 Plasma desktop configuration.
