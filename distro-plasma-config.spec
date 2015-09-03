@@ -41,6 +41,7 @@ Plasma desktop configuration.
 
 %install
 mkdir -p %{buildroot}%{_kde5_sysconfdir}/xdg/
+mkdir -p %{buildroot}%{_kde5_sysconfdir}/xdg/plasma-workspace/env
 mkdir -p %{buildroot}%{_kde5_datadir}/plasma/shells/org.kde.plasma.desktop/contents
 mkdir -p %{buildroot}%{_kde5_datadir}/plasma/layout-templates/org.openmandriva.plasma.desktop.defaultPanel/contents
 install -m 0644 %{SOURCE0} %{buildroot}%{_kde5_sysconfdir}/xdg/kcmdisplayrc
@@ -57,6 +58,7 @@ install -m 0644 %{SOURCE10} %{buildroot}%{_kde5_sysconfdir}/xdg/plasmarc
 install -m 0644 %{SOURCE11} %{buildroot}%{_kde5_sysconfdir}/xdg/startupconfig
 install -m 0644 %{SOURCE12} %{buildroot}%{_kde5_sysconfdir}/xdg/startupconfigfiles
 install -m 0644 %{SOURCE13} %{buildroot}%{_kde5_sysconfdir}/xdg/startupconfigkeys
+install -m 0755 %{SOURCE13} %{buildroot}%{_kde5_sysconfdir}/xdg/plasma-workspace/env/plasma-firstsetup.sh
 
 %files
 %{_kde5_sysconfdir}/xdg/*
