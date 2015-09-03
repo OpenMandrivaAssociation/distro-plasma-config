@@ -5,8 +5,20 @@ Release:	0.2
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		%{disturl}
-Source0:	kdeglobals
-Source1:	kwinrc
+Source0:	kcmdisplayrc
+Source1:	kcmfonts
+Source2:	kcminputrc
+Source3:	kdeglobals
+Source4:	kscreenlockerrc
+Source5:	kwinrc
+Source6:	metadata.desktop
+Source7:	org.kde.plasma.desktop-layout.js
+Source8:	org.openmandriva.plasma.desktop.defaultPanel-layout.js
+Source9:	plasmarc
+Source10:	startupconfig
+Source11:	startupconfigfiles
+Source12:	startupconfigkeys
+
 BuildRequires:	cmake(ECM)
 Requires:	breeze
 Provides:	kde4-config-file
@@ -27,9 +39,24 @@ Plasma desktop configuration.
 
 %install
 mkdir -p %{buildroot}%{_kde5_sysconfdir}/xdg/
-install -m 0644 %{SOURCE0} %{buildroot}%{_kde5_sysconfdir}/xdg/kdeglobals
-install -m 0644 %{SOURCE1} %{buildroot}%{_kde5_sysconfdir}/xdg/kwinrc
+mkdir -p %{buildroot}%{_kde5_datadir}/plasma/shells/org.kde.plasma.desktop/contents
+mkdir -p %{buildroot}%{_kde5_datadir}/plasma/layout-templates/org.openmandriva.plasma.desktop.defaultPanel/contents
+install -m 0644 %{SOURCE0} %{buildroot}%{_kde5_sysconfdir}/xdg/kcmdisplayrc
+install -m 0644 %{SOURCE1} %{buildroot}%{_kde5_sysconfdir}/xdg/kcmfonts
+install -m 0644 %{SOURCE2} %{buildroot}%{_kde5_sysconfdir}/xdg/kcminputrc
+install -m 0644 %{SOURCE3} %{buildroot}%{_kde5_sysconfdir}/xdg/kdeglobals
+install -m 0644 %{SOURCE4} %{buildroot}%{_kde5_sysconfdir}/xdg/kscreenlockerrc
+install -m 0644 %{SOURCE5} %{buildroot}%{_kde5_sysconfdir}/xdg/kwinrc
+install -m 0644 %{SOURCE6} %{buildroot}%{_kde5_datadir}/plasma/layout-templates/org.openmandriva.plasma.desktop.defaultPanel/metadata.desktop
+install -m 0644 %{SOURCE7} %{buildroot}%{_kde5_datadir}/plasma/shells/org.kde.plasma.desktop/contents/layout.js
+install -m 0644 %{SOURCE8} %{buildroot}%{_kde5_datadir}/plasma/layout-templates/org.openmandriva.plasma.desktop.defaultPanel/contents/layout.js
+install -m 0644 %{SOURCE9} %{buildroot}%{_kde5_sysconfdir}/xdg/plasmarc
+install -m 0644 %{SOURCE10} %{buildroot}%{_kde5_sysconfdir}/xdg/startupconfig
+install -m 0644 %{SOURCE11} %{buildroot}%{_kde5_sysconfdir}/xdg/startupconfigfiles
+install -m 0644 %{SOURCE12} %{buildroot}%{_kde5_sysconfdir}/xdg/startupconfigkeys
 
 %files
-%{_kde5_sysconfdir}/xdg/kdeglobals
-%{_kde5_sysconfdir}/xdg/kwinrc
+%{_kde5_sysconfdir}/xdg/*
+%{_kde5_datadir}/plasma/layout-templates/org.openmandriva.plasma.desktop.defaultPanel/metadata.desktop
+%{_kde5_datadir}/plasma/layout-templates/org.openmandriva.plasma.desktop.defaultPanel/contents/layout.js
+%{_kde5_datadir}/plasma/shells/org.kde.plasma.desktop/contents/layout.js
