@@ -11,7 +11,8 @@ UnredirectFullscreen=true
 XRenderSmoothScale=false
 
 [Desktops]
-Number=1
+Number=4
+Rows=2
 
 [Effect-Zoom]
 InitialZoom=1
