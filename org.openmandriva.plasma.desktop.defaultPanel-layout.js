@@ -1,5 +1,5 @@
 // Default Plasma panel for OpenMandriva
-// Author: Tomasz Pawe≈Ç Gajc (tpgxyz@gmail.com)
+// Author: Tomasz Pawe≥ Gajc (tpgxyz@gmail.com)
 // Licensed under GPL
 
 // helper function for removing panels
