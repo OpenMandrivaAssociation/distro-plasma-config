@@ -1,21 +1,116 @@
 [Appmenu Style]
 Style=InApplication
 
+[ColorEffects:Disabled]
+Color=56,56,56
+ColorAmount=0
+ColorEffect=0
+ContrastAmount=0.65000000000000002
+ContrastEffect=1
+IntensityAmount=0.10000000000000001
+IntensityEffect=2
+
+[ColorEffects:Inactive]
+ChangeSelectionColor=true
+Color=112,111,110
+ColorAmount=0.025000000000000001
+ColorEffect=2
+ContrastAmount=0.10000000000000001
+ContrastEffect=2
+Enable=false
+IntensityAmount=0
+IntensityEffect=0
+
+[Colors:Button]
+BackgroundAlternate=77,77,77
+BackgroundNormal=49,54,59
+DecorationFocus=61,174,233
+DecorationHover=61,174,233
+ForegroundActive=61,174,233
+ForegroundInactive=189,195,199
+ForegroundLink=41,128,185
+ForegroundNegative=218,68,83
+ForegroundNeutral=246,116,0
+ForegroundNormal=239,240,241
+ForegroundPositive=39,174,96
+ForegroundVisited=127,140,141
+
+[Colors:Selection]
+BackgroundAlternate=29,153,243
+BackgroundNormal=61,174,233
+DecorationFocus=61,174,233
+DecorationHover=61,174,233
+ForegroundActive=252,252,252
+ForegroundInactive=239,240,241
+ForegroundLink=253,188,75
+ForegroundNegative=218,68,83
+ForegroundNeutral=246,116,0
+ForegroundNormal=239,240,241
+ForegroundPositive=39,174,96
+ForegroundVisited=189,195,199
+
+[Colors:Tooltip]
+BackgroundAlternate=77,77,77
+BackgroundNormal=49,54,59
+DecorationFocus=61,174,233
+DecorationHover=61,174,233
+ForegroundActive=61,174,233
+ForegroundInactive=189,195,199
+ForegroundLink=41,128,185
+ForegroundNegative=218,68,83
+ForegroundNeutral=246,116,0
+ForegroundNormal=239,240,241
+ForegroundPositive=39,174,96
+ForegroundVisited=127,140,141
+
+[Colors:View]
+BackgroundAlternate=49,54,59
+BackgroundNormal=35,38,41
+DecorationFocus=61,174,233
+DecorationHover=61,174,233
+ForegroundActive=61,174,233
+ForegroundInactive=189,195,199
+ForegroundLink=41,128,185
+ForegroundNegative=218,68,83
+ForegroundNeutral=246,116,0
+ForegroundNormal=239,240,241
+ForegroundPositive=39,174,96
+ForegroundVisited=127,140,141
+
+[Colors:Window]
+BackgroundAlternate=77,77,77
+BackgroundNormal=49,54,59
+DecorationFocus=61,174,233
+DecorationHover=61,174,233
+ForegroundActive=61,174,233
+ForegroundInactive=189,195,199
+ForegroundLink=41,128,185
+ForegroundNegative=218,68,83
+ForegroundNeutral=246,116,0
+ForegroundNormal=239,240,241
+ForegroundPositive=39,174,96
+ForegroundVisited=127,140,141
+
+[Emoticons]
+emoticonsTheme=Breeze
+parseMode=2
+
 [General]
 BrowserApplication[$e]=firefox.desktop
 ColorScheme=Breeze Dark
 Name=Breeze Dark
-shadeSortColumn=true
 XftAntialias=true
-XftHintStyle=hintsmedium
+XftHintStyle=hintmedium
 XftSubPixel=rgb
+dbfile=/home/tpg/.mozilla/firefox/n1y61o76.default/places.sqlite
 desktopFont=Droid Sans,10,-1,5,50,0,0,0,0,0
-fixed=Monospace,10,-1,5,50,0,0,0,0,0
-font=Droid Sans,10,-1,5,50,0,0,0,0,0
-menuFont=Droid Sans,10,-1,5,50,0,0,0,0,0
-smallestReadableFont=Droid Sans,9,-1,5,50,0,0,0,0,0
+fixed=Liberation Mono,10,-1,5,75,1,0,0,0,0
+font=Liberation Sans,10,-1,5,50,0,0,0,0,0
+menuFont=Liberation Sans,10,-1,5,75,1,0,0,0,0
+shadeSortColumn=true
+smallestReadableFont=Liberation Sans,9,-1,5,50,0,0,0,0,0
 taskbarFont=Droid Sans,10,-1,5,50,0,0,0,0,0
-toolBarFont=Droid Sans,9,-1,5,50,0,0,0,0,0
+toolBarFont=Liberation Sans,9,-1,5,50,0,0,0,0,0
 widgetStyle=breeze
 
 [Icons]
@@ -57,4 +152,10 @@ ToolButtonStyle=TextBesideIcon
 ToolButtonStyleOtherToolbars=TextBesideIcon
 
 [WM]
-activeFont=Droid Sans,10,-1,5,50,0,0,0,0,0
+activeBackground=49,54,59
+activeBlend=255,255,255
+activeFont=Liberation Sans,10,-1,5,50,0,0,0,0,0
+activeForeground=239,240,241
+inactiveBackground=49,54,59
+inactiveBlend=75,71,67
+inactiveForeground=127,140,141
