@@ -72,13 +72,19 @@ cat > $HOME/.gtkrc-2.0-kde4 << EOF
 include "/usr/share/themes/oxygen-gtk/gtk-2.0/gtkrc"
 style "user-font"
 {
-    font_name="Liberation Sans Regular"
+        font_name="Liberation Sans Regular"
 }
 widget_class "*" style "user-font"
-gtk-theme-name = "oxygen-gtk"
+gtk-font-name="Liberation Sans Regular 10"
+gtk-theme-name="oxygen-gtk"
+gtk-icon-theme-name="breeze-dark"
+gtk-fallback-icon-theme="hicolor"
+gtk-toolbar-style=GTK_TOOLBAR_ICONS
+gtk-menu-images=1
+gtk-button-images=1
 EOF
 
-    mkdir -p $HOME/.kde4/env/
+mkdir -p $HOME/.kde4/env/
 cat >$HOME/.kde4/env/gtk2-engines.sh <<EOF
 export GTK2_RC_FILES=$HOME/.gtkrc-2.0-kde4
 EOF
@@ -90,8 +96,13 @@ if [ ! -f "$HOME/.config/gtk-3.0/settings.ini" ]; then
     mkdir -p $HOME/.config/gtk-3.0
 cat > $HOME/.config/gtk-3.0/settings.ini << EOF
 [Settings]
-gtk-font-name=Liberation Sans Regular
+gtk-font-name=Liberation Sans Regular 10
 gtk-theme-name=oxygen-gtk
+gtk-icon-theme-name=breeze-dark
+gtk-fallback-icon-theme=hicolor
+gtk-toolbar-style=GTK_TOOLBAR_ICONS
+gtk-menu-images=1
+gtk-button-images=1
 EOF
 fi
 
