@@ -66,7 +66,7 @@ fi
 FONTS=$(kreadconfig5 --group "OpenMandriva" --key "fontsConfig" --default "false")
 
 if [ ! "$FONTS" = "true" ]; then
-    if [ ! -f "$HOME/.gtkrc-2.0-kde4" -o ! -f "$HOME/.kde4/env/gtk2-engines.sh" ]; then
+    if [ ! -f "$HOME/.gtkrc-2.0-kde4" -o ! -f "$HOME/.config/autostart-scripts/gtk2-engines.sh" ]; then
 	### GTK theme apply #####
 cat > $HOME/.gtkrc-2.0-kde4 << EOF
 include "/usr/share/themes/oxygen-gtk/gtk-2.0/gtkrc"
@@ -84,8 +84,8 @@ gtk-menu-images=1
 gtk-button-images=1
 EOF
 
-mkdir -p $HOME/.kde4/env/
-cat >$HOME/.kde4/env/gtk2-engines.sh <<EOF
+mkdir -p $HOME/.config/autostart-scripts
+cat >$HOME/.config/autostart-scripts/gtk2-engines.sh <<EOF
 export GTK2_RC_FILES=$HOME/.gtkrc-2.0-kde4
 EOF
 

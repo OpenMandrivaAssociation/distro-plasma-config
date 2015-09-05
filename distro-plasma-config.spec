@@ -20,6 +20,7 @@ Source11:	startupconfig
 Source12:	startupconfigfiles
 Source13:	startupconfigkeys
 Source14:	plasma-firstsetup.sh
+Source15:	baloofilerc
 
 BuildRequires:	cmake(ECM)
 Requires:	breeze
@@ -59,6 +60,7 @@ install -m 0644 %{SOURCE11} %{buildroot}%{_kde5_sysconfdir}/xdg/startupconfig
 install -m 0644 %{SOURCE12} %{buildroot}%{_kde5_sysconfdir}/xdg/startupconfigfiles
 install -m 0644 %{SOURCE13} %{buildroot}%{_kde5_sysconfdir}/xdg/startupconfigkeys
 install -m 0755 %{SOURCE14} %{buildroot}%{_kde5_sysconfdir}/xdg/plasma-workspace/env/plasma-firstsetup.sh
+install -m 0644 %{SOURCE15} %{buildroot}%{_kde5_sysconfdir}/xdg/baloofilerc
 
 %files
 %{_kde5_sysconfdir}/xdg/*
