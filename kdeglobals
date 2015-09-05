@@ -91,25 +91,20 @@ ForegroundNormal=239,240,241
 ForegroundPositive=39,174,96
 ForegroundVisited=127,140,141
 
-[Emoticons]
-emoticonsTheme=Breeze
-parseMode=2
-
 [General]
 BrowserApplication[$e]=firefox.desktop
 ColorScheme=Breeze Dark
 Name=Breeze Dark
 XftAntialias=true
-XftHintStyle=hintmedium
+XftHintStyle=hintslight
 XftSubPixel=rgb
-dbfile=/home/tpg/.mozilla/firefox/n1y61o76.default/places.sqlite
-desktopFont=Droid Sans,10,-1,5,50,0,0,0,0,0
-fixed=Liberation Mono,10,-1,5,75,1,0,0,0,0
+desktopFont=Liberation Sans,10,-1,5,50,0,0,0,0,0
+fixed=Liberation Mono,10,-1,5,50,0,0,0,0,0
 font=Liberation Sans,10,-1,5,50,0,0,0,0,0
-menuFont=Liberation Sans,10,-1,5,75,1,0,0,0,0
+menuFont=Liberation Sans,10,-1,5,50,0,0,0,0,0
 shadeSortColumn=true
 smallestReadableFont=Liberation Sans,9,-1,5,50,0,0,0,0,0
-taskbarFont=Droid Sans,10,-1,5,50,0,0,0,0,0
+taskbarFont=Liberation  Sans,10,-1,5,50,0,0,0,0,0
 toolBarFont=Liberation Sans,9,-1,5,50,0,0,0,0,0
 widgetStyle=breeze
 

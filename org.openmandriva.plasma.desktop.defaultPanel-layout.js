@@ -1,7 +1,8 @@
 // Default Plasma panel for OpenMandriva
-// Author: Tomasz Pawe≥ Gajc (tpgxyz@gmail.com)
+// Author: Tomasz Pawe≈Ç Gajc (tpgxyz@gmail.com)
 // Licensed under GPL
 
+print("Loading OpenMandriva Plasma panel configuration");
 // helper function for removing panels
 function remove()
 {
@@ -36,61 +37,63 @@ if (panelIds.length == 1) {
 }
 
 // let's calculate desired panel height based on screen geometry
-var screenrect = screenGeometry(0); 
+var screenrect = screenGeometry(0);
 panel.height = screenrect.height/20;
 panel.alignment = "left"
 panel.hiding = "none"
 
-// by default is used homerun as a menu
-// launcher = panel.addWidget("homerunlauncher");// default fullscreen homerun
+// by default is used kickerdash as a menu
 launcher = panel.addWidget("org.kde.plasma.kickerdash");
 launcher.globalShortcut = "Alt+F1"
-launcher.writeConfig("icon", "/usr/share/icons/openmandriva.svg");
+launcher.currentConfigGroup = ["General"];
+launcher.writeConfig("customButtonImage", "file:///usr/share/icons/openmandriva.svg");
+launcher.writeConfig("favoriteApps", "firefox.desktop,org.kde.konversation.desktop,openmandriva-drakconf.desktop,systemsettings.desktop");
+launcher.writeConfig("showRecentContacts", "true");
+launcher.writeConfig("useCustomButtonImage", "true");
 launcher.reloadConfig();
 
 tasks = panel.addWidget("org.kde.plasma.taskmanager");
-tasks.writeConfig("forceStripes","true")
-tasks.writeConfig("onlyGroupWhenFull","true")
-tasks.writeConfig("groupingStrategy","1")
-tasks.writeConfig("highlightWindows","false")
-tasks.writeConfig("maxStripes","2")
-tasks.writeConfig("showOnlyCurrentDesktop","true")
-tasks.writeConfig("showOnlyCurrentScreen","false")
-tasks.writeConfig("showOnlyMinimized","false")
-tasks.writeConfig("showToolTips","true")
-tasks.writeConfig("sortingStrategy","2")
+tasks.currentConfigGroup = ["General"];
+tasks.writeConfig("forceStripes","true");
+tasks.writeConfig("middleClickAction", "Close");
+tasks.writeConfig("onlyGroupWhenFull","true");
+tasks.writeConfig("groupingStrategy","1");
+tasks.writeConfig("highlightWindows","false");
+tasks.writeConfig("maxStripes","2");
+tasks.writeConfig("showOnlyCurrentDesktop","true");
+tasks.writeConfig("showOnlyCurrentScreen","false");
+tasks.writeConfig("showOnlyMinimized","false");
+tasks.writeConfig("showToolTips","true");
+tasks.writeConfig("sortingStrategy","2");
 
-pager = panel.addWidget("org.kde.plasma.virtualdesktops");
+pager = panel.addWidget("org.kde.plasma.pager");
+pager.currentConfigGroup = ["General"];
 pager.writeConfig("showWindowIcons","true");
+pager.writeConfig("displayedText", "Number");
 
 systray = panel.addWidget("org.kde.plasma.systemtray");
-systray.writeConfig("communicationsShow", "true")
-systray.writeConfig("applicationStatusShown","true")
-systray.writeConfig("ShowCommunications","true")
-systray.writeConfig("systemServicesShown","true")
-systray.writeConfig("hardwareControlShown","true")
-systray.writeConfig("miscellaneousShown","true")
-systray.writeConfig("shownItems", "org.kde.plasma.notifications,org.kde.plasma.networkmanagement,org.kde.plasma.printmanager,Konversation")
-systray.writeConfig("hiddenItems","hp-systray,Klipper")
-i = 0;
-if (hasBattery) {
-    systray.currentConfigGroup = new Array("Applets", ++i);
-    systray.writeConfig("plugin", "org.kde.plasma.powermanagement");
-}
-systray.currentConfigGroup = new Array("Applets", ++i);
-systray.writeConfig("plugin", "org.kde.plasma.notifications");
-systray.currentConfigGroup = new Array("Applets", ++i);
-systray.writeConfig("plugin", "org.kde.plasma.networkmanagement");
-systray.currentConfigGroup = new Array("Applets", ++i);
-systray.writeConfig("plugin", "org.kde.plasma.printmanager");
+systray.currentConfigGroup = ["General"];
+systray.writeConfig("communicationsShow", "true");
+systray.writeConfig("applicationStatusShown","true");
+systray.writeConfig("ShowCommunications","true");
+systray.writeConfig("systemServicesShown","true");
+systray.writeConfig("hardwareControlShown","true");
+systray.writeConfig("miscellaneousShown","true");
+systray.writeConfig("extraItems", "org.kde.plasma.devicenotifier,org.kde.plasma.notifications,org.kde.plasma.bluetooth,org.kde.plasma.battery,org.kde.plasma.volume,org.kde.plasma.networkmanagement,org.kde.muonnotifier,org.kde.plasma.devicenotifier");
+systray.writeConfig("hiddenItems", "hp-systray,python3.4m");
+systray.writeConfig("knownItems", "org.kde.plasma.notifications,org.kde.plasma.bluetooth,org.kde.plasma.clipboard,org.kde.plasma.battery,org.kde.plasma.volume,org.kde.plasma.networkmanagement,org.kde.plasma.mediacontroller,org.kde.muonnotifier,org.kde.plasma.devicenotifier");
 
 clock = panel.addWidget("org.kde.plasma.digitalclock");
+clock.currentConfigGroup = ["General"];
 clock.writeConfig("showDate","true");
-clock.writeConfig("showLocalTimezone","true");
+clock.writeConfig("dateFormat", "isoDate");
+clock.writeConfig("use24hFormat", "2");
+
 clock.reloadConfig();
 panel.addWidget("org.kde.plasma.trash");
 
-sleep(1);
+sleep(0.5);
 
 panel.reloadConfig()
-panel.locked = true;
+// if set to true it is not possible to remove panel :)
+//panel.locked = true;

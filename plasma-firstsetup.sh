@@ -12,18 +12,18 @@ FIRSTRUN=$(kreadconfig5 --group "OpenMandriva" --key "FirstRun" --default "true"
 
 if [ "$FIRSTRUN" = "true" ]; then
 #(tpg) set up gpg-agent-startup
-if [ ! -f "$HOME/.kde4/env/gpg-agent-startup.sh" ]; then
-mkdir -p $HOME/.kde4/env/
-cat > $HOME/.kde4/env/gpg-agent-startup.sh << "EOF"
+if [ ! -f "$HOME/.config/autostart-scripts/gpg-agent-startup.sh" ]; then
+mkdir -p $HOME/.config/autostart-scripts
+cat > $HOME/.config/autostart-scripts/gpg-agent-startup.sh << "EOF"
 #!/bin/sh
 gpg-agent --daemon --use-standard-socket --write-env-file "$GPGAGENTINFO"
 EOF
 fi
 
 #(tpg) set up ssh-agent-startup
-if [ ! -f "$HOME/.kde4/env/ssh-agent-startup.sh" ]; then
-mkdir -p $HOME/.kde4/env/
-cat > $HOME/.kde4/env/ssh-agent-startup.sh << "EOF"
+if [ ! -f "$HOME/.config/autostart-scripts/ssh-agent-startup.sh" ]; then
+mkdir -p $HOME/.config/autostart-scripts
+cat > $HOME/.config/autostart-scripts/ssh-agent-startup.sh << "EOF"
 #!/bin/sh
 SSH_AGENT=/usr/bin/ssh-agent
 ## Run ssh-agent only if not already running, and available
@@ -36,9 +36,9 @@ EOF
 fi
 
 #(tpg) set up ssh-agent-shutdown
-if [ ! -f "$HOME/.kde4/shutdown/ssh-agent-shutdown.sh" ]; then
-mkdir -p $HOME/.kde4/shutdown/
-cat > $HOME/.kde4/shutdown/ssh-agent-shutdown.sh << "EOF"
+if [ ! -f "$HOME/.config/plasma-workspace/shutdown/ssh-agent-shutdown.sh" ]; then
+mkdir -p $HOME/.config/plasma-workspace/shutdown
+cat > $HOME/.config/plasma-workspace/shutdown/ssh-agent-shutdown.sh << "EOF"
 #!/bin/sh
 if [ -n "${SSH_AGENT_PID}" ]; then
 kill ${SSH_AGENT_PID}
@@ -50,15 +50,15 @@ fi
 #(tpg) add sepcial icons on DESKTOP
 USER_DESKTOP=`xdg-user-dir DESKTOP`
 if [ ! -e $USER_DESKTOP/om-welcome.desktop ]; then
-cp -f /usr/share/applications/om-welcome.desktop $USER_DESKTOP 2> /dev/null
+    cp -f /usr/share/applications/om-welcome.desktop $USER_DESKTOP 2> /dev/null
 fi
 
 if [ ! -e $USER_DESKTOP/join.desktop ]; then
-cp -f /usr/share/applications/join.desktop $USER_DESKTOP 2> /dev/null
+    cp -f /usr/share/applications/join.desktop $USER_DESKTOP 2> /dev/null
 fi
 
 if [ ! -e $USER_DESKTOP/donate.desktop ]; then
-cp -f /usr/share/applications/donate.desktop $USER_DESKTOP 2> /dev/null
+    cp -f /usr/share/applications/donate.desktop $USER_DESKTOP 2> /dev/null
 fi
 fi
 
@@ -117,7 +117,7 @@ if [ ! "$OLDICON" = "true" ]; then
 	  ICON=$(kreadconfig5 --file $MUSICDIR/.directory --key Icon)
 
 	  if [ "$ICON" == "mdk-music.png" ]; then
-	    kwriteconfig --file "$MUSICDIR/.directory" --key Icon folder-sound
+	    kwriteconfig5 --file "$MUSICDIR/.directory" --key Icon folder-sound
 	  fi
     fi
 
@@ -140,7 +140,7 @@ EOF
       ICON=$(kreadconfig5 --file $DLDIR/.directory --key Icon)
 
       if [ "$ICON" == "download-mdk.png" ]; then
-        kwriteconfig --file "$DLDIR/.directory" --key Icon folder-downloads
+        kwriteconfig5 --file "$DLDIR/.directory" --key Icon folder-downloads
       fi
     fi
 
@@ -162,7 +162,7 @@ EOF
       ICON=$(kreadconfig5 --file $DOCDIR/.directory --key Icon)
 
       if [ "$ICON" == "document-mdk.png" ]; then
-        kwriteconfig --file "$DOCDIR/.directory" --key Icon folder-documents
+        kwriteconfig5 --file "$DOCDIR/.directory" --key Icon folder-documents
       fi
     fi
 
@@ -185,7 +185,7 @@ EOF
       ICON=$(kreadconfig5 --file $PICTUREDIR/.directory --key Icon)
 
       if [ "$ICON" == "picture-mdk.png" ]; then
-        kwriteconfig --file "$PICTUREDIR/.directory" --key Icon folder-image
+        kwriteconfig5 --file "$PICTUREDIR/.directory" --key Icon folder-image
       fi
     fi
 
@@ -207,7 +207,7 @@ EOF
       ICON=$(kreadconfig5 --file $VIDEOSDIR/.directory --key Icon)
 
       if [ "$ICON" == "video-mdk.png" ]; then
-        kwriteconfig --file "$VIDEOSDIR/.directory" --key Icon folder-video
+        kwriteconfig5 --file "$VIDEOSDIR/.directory" --key Icon folder-video
       fi
     fi
 
@@ -218,14 +218,14 @@ Hidden=true
 Icon=folder-video
 EOF
    fi
-   kwriteconfig --group "OpenMandriva" --key "IconMigration" --type "bool" 1
+   kwriteconfig5 --group "OpenMandriva" --key "IconMigration" --type "bool" 1
  fi
 
  fi
 
 # firsrun end
 if [ "$FIRSTRUN" = "true" ]; then
-        kwriteconfig --group "OpenMandriva" --key "FirstRun" --type "bool" "false"
+        kwriteconfig5 --group "OpenMandriva" --key "FirstRun" --type "bool" "false"
 fi
 
 fi
