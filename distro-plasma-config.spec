@@ -1,7 +1,7 @@
 Summary:	Plasma desktop configuration
 Name:		distro-plasma-config
 Version:	0.1
-Release:	0.4
+Release:	0.5
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		%{disturl}
@@ -21,6 +21,7 @@ Source12:	startupconfigfiles
 Source13:	startupconfigkeys
 Source14:	plasma-firstsetup.sh
 Source15:	baloofilerc
+Source16:	kcm-about-distrorc
 
 BuildRequires:	cmake(ECM)
 Requires:	breeze
@@ -61,6 +62,7 @@ install -m 0644 %{SOURCE12} %{buildroot}%{_kde5_sysconfdir}/xdg/startupconfigfil
 install -m 0644 %{SOURCE13} %{buildroot}%{_kde5_sysconfdir}/xdg/startupconfigkeys
 install -m 0755 %{SOURCE14} %{buildroot}%{_kde5_sysconfdir}/xdg/plasma-workspace/env/plasma-firstsetup.sh
 install -m 0644 %{SOURCE15} %{buildroot}%{_kde5_sysconfdir}/xdg/baloofilerc
+install -m 0644 %{SOURCE16} %{buildroot}%{_kde5_sysconfdir}/xdg/kcm-about-distrorc
 
 %files
 %{_kde5_sysconfdir}/xdg/*
