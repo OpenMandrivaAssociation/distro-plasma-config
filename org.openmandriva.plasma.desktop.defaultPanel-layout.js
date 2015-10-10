@@ -27,7 +27,7 @@ function removeOldPanels()
 }
 
 // remove already existing other pnales
-removeOldPanels();
+removeOldPanels()
 
 // start new panel
 var panel = new Panel;
@@ -39,12 +39,12 @@ if (panelIds.length == 1) {
 // let's calculate desired panel height based on screen geometry
 var screenrect = screenGeometry(0);
 panel.height = screenrect.height/20;
-panel.alignment = "left";
-panel.hiding = "none";
+panel.alignment = "left"
+panel.hiding = "none"
 
 // by default is used kickerdash as a menu
 launcher = panel.addWidget("org.kde.plasma.kickerdash");
-launcher.globalShortcut = "Alt+F1";
+launcher.globalShortcut = "Alt+F1"
 launcher.currentConfigGroup = ["General"];
 launcher.writeConfig("customButtonImage", "file:///usr/share/icons/openmandriva.svg");
 launcher.writeConfig("favoriteApps", "firefox.desktop,org.kde.konversation.desktop,openmandriva-drakconf.desktop,systemsettings.desktop");
