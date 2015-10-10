@@ -1,5 +1,5 @@
 // Default Plasma layout for OpenMandriva
-// Author: Tomasz Pawe³ Gajc (tpgxyz@gmail.com)
+// Author: Tomasz PaweÂ³ Gajc (tpgxyz@gmail.com)
 // Licensed under GPL
 
 print("Starting OpenMandriva Plasma configuration");
