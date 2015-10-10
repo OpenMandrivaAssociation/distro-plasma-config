@@ -1,5 +1,5 @@
 // Default Plasma panel for OpenMandriva
-// Author: Tomasz Pawe³ Gajc (tpgxyz@gmail.com)
+// Author: Tomasz PaweÂ³ Gajc (tpgxyz@gmail.com)
 // Licensed under GPL
 
 print("Loading OpenMandriva Plasma panel configuration");
@@ -96,4 +96,4 @@ sleep(0.5);
 
 panel.reloadConfig()
 // if set to true it is not possible to remove panel :)
-panel.locked = true;
+panel.locked = false;
