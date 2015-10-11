@@ -21,4 +21,4 @@ for (var i = 0; i < screenCount; ++i) {
 
 sleep(0.5);
 // lock desktop
-locked = true;
+locked = false;
