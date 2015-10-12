@@ -47,7 +47,21 @@ fi
 EOF
 fi
 
-#(tpg) add sepcial icons on DESKTOP
+#(tpg) fix missing recent documents
+# https://issues.openmandriva.org/show_bug.cgi?id=1378
+if [ ! -f "$HOME/.config/plasma-workspace/env/setup_recentdocuments.sh" ]; then
+mkdir -p $HOME/.config/plasma-workspace/env
+cat > $HOME/.config/plasma-workspace/env/setup_recentdocuments.sh << "EOF"
+#!/bin/sh
+if [ ! -L $HOME/.kde/share/apps/RecentDocuments ] && [ -d $HOME/.kde/share/apps/RecentDocuments ]; then
+    rm -rf $HOME/.kde/share/apps/RecentDocuments
+fi
+
+ln -sf $HOME/.local/share/RecentDocuments ~/.kde/share/apps/RecentDocuments
+EOF
+fi
+
+#(tpg) add special icons on DESKTOP
 USER_DESKTOP=`xdg-user-dir DESKTOP`
 if [ ! -e $USER_DESKTOP/om-welcome.desktop ]; then
     cp -f /usr/share/applications/om-welcome.desktop $USER_DESKTOP 2> /dev/null
