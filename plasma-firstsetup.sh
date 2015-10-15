@@ -57,7 +57,7 @@ if [ ! -L $HOME/.kde/share/apps/RecentDocuments ] && [ -d $HOME/.kde/share/apps/
     rm -rf $HOME/.kde/share/apps/RecentDocuments
 fi
 
-ln -sf $HOME/.local/share/RecentDocuments ~/.kde/share/apps/RecentDocuments
+ln -sf $HOME/.local/share/RecentDocuments $HOME/.kde/share/apps/RecentDocuments
 EOF
 fi
 
