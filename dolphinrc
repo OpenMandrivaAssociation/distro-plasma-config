@@ -31,3 +31,9 @@ IconSize=22
 
 [PreviewSettings]
 Plugins=imagethumbnail,jpegthumbnail,svgthumbnail,kffmpegthumbnailer
+
+[Desktop Entry]
+DefaultProfile=Shell.prfile
+
+[Favorite Profiles]
+Favorites=

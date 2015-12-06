@@ -26,7 +26,7 @@ function removeOldPanels()
     }
 }
 
-// remove already existing other pnales
+// remove already existing other panels
 removeOldPanels()
 
 // start new panel

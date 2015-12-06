@@ -53,12 +53,13 @@ if [ ! -f "$HOME/.config/plasma-workspace/env/setup_recentdocuments.sh" ]; then
 mkdir -p $HOME/.config/plasma-workspace/env
 cat > $HOME/.config/plasma-workspace/env/setup_recentdocuments.sh << "EOF"
 #!/bin/sh
-if [ ! -L $HOME/.kde/share/apps/RecentDocuments ] && [ -d $HOME/.kde/share/apps/RecentDocuments ]; then
-    rm -rf $HOME/.kde/share/apps/RecentDocuments
+if [ ! -L $HOME/.kde4/share/apps/RecentDocuments ] && [ -d $HOME/.kde4/share/apps/RecentDocuments ]; then
+    rm -rf $HOME/.kde4/share/apps/RecentDocuments
 fi
 
-ln -sf $HOME/.local/share/RecentDocuments $HOME/.kde/share/apps/RecentDocuments
+ln -sf $HOME/.local/share/RecentDocuments $HOME/.kde4/share/apps/RecentDocuments
 EOF
+chmod +x $HOME/.config/plasma-workspace/env/setup_recentdocuments.sh
 fi
 
 #(tpg) add special icons on DESKTOP
