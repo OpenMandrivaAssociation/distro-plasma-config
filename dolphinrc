@@ -33,7 +33,7 @@ IconSize=22
 Plugins=imagethumbnail,jpegthumbnail,svgthumbnail,kffmpegthumbnailer
 
 [Desktop Entry]
-DefaultProfile=Shell.prfile
+DefaultProfile=Shell.profile
 
 [Favorite Profiles]
 Favorites=
