@@ -28,7 +28,7 @@ Source19:	dolphinrc
 
 BuildRequires:	cmake(ECM)
 Requires:	breeze
-Requires:	gnome-breeze
+Requires:	breeze-gtk
 Provides:	kde4-config-file
 Provides:	distro-kde4-config-OpenMandriva = 2015.0
 Provides:	distro-kde4-config-OpenMandriva-common = 2015.0
