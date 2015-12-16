@@ -1,7 +1,7 @@
 Summary:	Plasma desktop configuration
 Name:		distro-plasma-config
 Version:	0.1
-Release:	0.13
+Release:	0.14
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		%{disturl}
@@ -29,6 +29,7 @@ Source19:	dolphinrc
 BuildRequires:	cmake(ECM)
 Requires:	breeze
 Requires:	breeze-gtk
+Requires:	breeze-icons
 Provides:	kde4-config-file
 Provides:	distro-kde4-config-OpenMandriva = 2015.0
 Provides:	distro-kde4-config-OpenMandriva-common = 2015.0

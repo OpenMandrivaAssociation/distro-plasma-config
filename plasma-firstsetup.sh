@@ -84,14 +84,14 @@ if [ ! "$FONTS" = "true" ]; then
     if [ ! -f "$HOME/.gtkrc-2.0-kde4" -o ! -f "$HOME/.config/autostart-scripts/gtk2-engines.sh" ]; then
 	### GTK theme apply #####
 cat > $HOME/.gtkrc-2.0-kde4 << EOF
-include "/usr/share/themes/Breeze-dark-gtk/gtk-2.0/gtkrc"
+include "/usr/share/themes/Breeze-Dark/gtk-2.0/gtkrc"
 style "user-font"
 {
         font_name="Liberation Sans Regular"
 }
 widget_class "*" style "user-font"
 gtk-font-name="Liberation Sans Regular 10"
-gtk-theme-name="Breeze-dark-gtk"
+gtk-theme-name="Breeze-Dark"
 gtk-icon-theme-name="breeze-dark"
 gtk-fallback-icon-theme="hicolor"
 gtk-toolbar-style=GTK_TOOLBAR_ICONS
@@ -112,7 +112,7 @@ if [ ! -f "$HOME/.config/gtk-3.0/settings.ini" ]; then
 cat > $HOME/.config/gtk-3.0/settings.ini << EOF
 [Settings]
 gtk-font-name=Liberation Sans Regular 10
-gtk-theme-name=Breeze-dark-gtk
+gtk-theme-name=Breeze-Dark
 gtk-icon-theme-name=breeze-dark
 gtk-fallback-icon-theme=hicolor
 gtk-toolbar-style=GTK_TOOLBAR_ICONS
