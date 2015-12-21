@@ -122,7 +122,7 @@ StartDragDist=4
 StartDragTime=500
 WheelScrollLines=3
 contrast=7
-widgetStyle=breeze
+widgetStyle=Breeze
 
 [KFileDialog Settings]
 Automatically select filename extension=true

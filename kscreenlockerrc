@@ -4,5 +4,5 @@ Autolock=false
 LockOnResume=false
 
 [Greeter]
-Theme=org.kde.breeze.desktop
+Theme=org.kde.breezedark.desktop
 ThemeBackground=/usr/share/mdk/backgrounds/default.png
