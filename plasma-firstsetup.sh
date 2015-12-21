@@ -57,6 +57,7 @@ if [ ! -L $HOME/.kde4/share/apps/RecentDocuments ] && [ -d $HOME/.kde4/share/app
     rm -rf $HOME/.kde4/share/apps/RecentDocuments
 fi
 
+[ ! -d $HOME/.kde4/share/apps ] && mkdir -p $HOME/.kde4/share/apps
 ln -sf $HOME/.local/share/RecentDocuments $HOME/.kde4/share/apps/RecentDocuments
 EOF
 chmod +x $HOME/.config/plasma-workspace/env/setup_recentdocuments.sh
