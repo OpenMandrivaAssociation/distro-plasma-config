@@ -1,7 +1,7 @@
 Summary:	Plasma desktop configuration
 Name:		distro-plasma-config
 Version:	0.1
-Release:	0.15
+Release:	0.16
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		%{disturl}
@@ -47,8 +47,9 @@ Plasma desktop configuration.
 %build
 
 %install
-mkdir -p %{buildroot}%{_kde5_sysconfdir}/xdg/
+mkdir -p %{buildroot}%{_kde5_sysconfdir}/xdg
 mkdir -p %{buildroot}%{_kde5_sysconfdir}/xdg/plasma-workspace/env
+mkdir -p %{buildroot}%{_kde5_datadir}/kservices5
 mkdir -p %{buildroot}%{_kde5_datadir}/plasma/shells/org.kde.plasma.desktop/contents
 mkdir -p %{buildroot}%{_kde5_datadir}/plasma/layout-templates/org.openmandriva.plasma.desktop.defaultPanel/contents
 install -m 0644 %{SOURCE0} %{buildroot}%{_kde5_sysconfdir}/xdg/kcmdisplayrc
@@ -59,6 +60,7 @@ install -m 0644 %{SOURCE4} %{buildroot}%{_kde5_sysconfdir}/xdg/kscreenlockerrc
 install -m 0644 %{SOURCE5} %{buildroot}%{_kde5_sysconfdir}/xdg/ksplashrc
 install -m 0644 %{SOURCE6} %{buildroot}%{_kde5_sysconfdir}/xdg/kwinrc
 install -m 0644 %{SOURCE7} %{buildroot}%{_kde5_datadir}/plasma/layout-templates/org.openmandriva.plasma.desktop.defaultPanel/metadata.desktop
+install -m 0644 %{SOURCE7} %{buildroot}%{_kde5_datadir}/kservices5/plasma-layout-template-org.openmandriva.plasma.desktop.defaultPanel.desktop
 install -m 0644 %{SOURCE8} %{buildroot}%{_kde5_datadir}/plasma/shells/org.kde.plasma.desktop/contents/layout.js
 install -m 0644 %{SOURCE9} %{buildroot}%{_kde5_datadir}/plasma/layout-templates/org.openmandriva.plasma.desktop.defaultPanel/contents/layout.js
 install -m 0644 %{SOURCE10} %{buildroot}%{_kde5_sysconfdir}/xdg/plasmarc
@@ -74,6 +76,7 @@ install -m 0644 %{SOURCE19} %{buildroot}%{_kde5_sysconfdir}/xdg/dolphinrc
 
 %files
 %{_kde5_sysconfdir}/xdg/*
+%{_kde5_datadir}/kservices5/plasma-layout-template-org.openmandriva.plasma.desktop.defaultPanel.desktop
 %{_kde5_datadir}/plasma/layout-templates/org.openmandriva.plasma.desktop.defaultPanel/metadata.desktop
 %{_kde5_datadir}/plasma/layout-templates/org.openmandriva.plasma.desktop.defaultPanel/contents/layout.js
 %{_kde5_datadir}/plasma/shells/org.kde.plasma.desktop/contents/layout.js
