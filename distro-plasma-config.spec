@@ -26,6 +26,8 @@ Source17:	ksmserverrc
 Source18:	kiorc
 Source19:	dolphinrc
 Source20:	kdebugrc
+# (tpg) disable debug in Qt5 apps
+Source21:	qtlogging.ini
 
 BuildRequires:	cmake(ECM)
 Requires:	breeze
@@ -49,6 +51,7 @@ Plasma desktop configuration.
 
 %install
 mkdir -p %{buildroot}%{_kde5_sysconfdir}/xdg
+mkdir -p %{buildroot}%{_kde5_sysconfdir}/xdg/QtProject
 mkdir -p %{buildroot}%{_kde5_sysconfdir}/xdg/plasma-workspace/env
 mkdir -p %{buildroot}%{_kde5_datadir}/kservices5
 mkdir -p %{buildroot}%{_kde5_datadir}/plasma/shells/org.kde.plasma.desktop/contents
@@ -75,6 +78,7 @@ install -m 0644 %{SOURCE17} %{buildroot}%{_kde5_sysconfdir}/xdg/ksmserverrc
 install -m 0644 %{SOURCE18} %{buildroot}%{_kde5_sysconfdir}/xdg/kiorc
 install -m 0644 %{SOURCE19} %{buildroot}%{_kde5_sysconfdir}/xdg/dolphinrc
 install -m 0644 %{SOURCE20} %{buildroot}%{_kde5_sysconfdir}/xdg/kdebugrc
+install -m 0644 %{SOURCE21} %{buildroot}%{_kde5_sysconfdir}/xdg/QtProject/qtlogging.ini
 
 %files
 %{_kde5_sysconfdir}/xdg/*

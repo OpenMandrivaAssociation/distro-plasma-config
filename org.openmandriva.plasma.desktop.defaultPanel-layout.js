@@ -42,13 +42,13 @@ panel.height = screenrect.height/20;
 panel.alignment = "left"
 panel.hiding = "none"
 
-// by default is used kickerdash as a menu
-launcher = panel.addWidget("org.kde.plasma.kickerdash");
+// by default kickoff is used
+launcher = panel.addWidget("org.kde.plasma.kickoff");
 launcher.globalShortcut = "Alt+F1"
 launcher.currentConfigGroup = ["General"];
 launcher.writeConfig("customButtonImage", "file:///usr/share/icons/openmandriva.svg");
-launcher.writeConfig("favoriteApps", "firefox.desktop,org.kde.konversation.desktop,openmandriva-drakconf.desktop,systemsettings.desktop");
-launcher.writeConfig("showRecentContacts", "true");
+launcher.writeConfig("favorites", "preferred://browser,org.kde.kmail.desktop,org.kde.konversation.desktop,org.kde.dolphin.desktop,org.kde.kate.desktop,org.kde.konsole.desktop,systemsettings.desktop,openmandriva-drakconf.desktop");
+launcher.writeConfig("showAppsByName", "true");
 launcher.writeConfig("useCustomButtonImage", "true");
 launcher.reloadConfig();
 
