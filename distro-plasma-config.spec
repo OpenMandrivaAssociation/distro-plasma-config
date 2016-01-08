@@ -1,7 +1,7 @@
 Summary:	Plasma desktop configuration
 Name:		distro-plasma-config
 Version:	0.1
-Release:	0.17
+Release:	0.18
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		%{disturl}
@@ -25,6 +25,7 @@ Source16:	kcm-about-distrorc
 Source17:	ksmserverrc
 Source18:	kiorc
 Source19:	dolphinrc
+Source20:	kdebugrc
 
 BuildRequires:	cmake(ECM)
 Requires:	breeze
@@ -73,6 +74,7 @@ install -m 0644 %{SOURCE16} %{buildroot}%{_kde5_sysconfdir}/xdg/kcm-about-distro
 install -m 0644 %{SOURCE17} %{buildroot}%{_kde5_sysconfdir}/xdg/ksmserverrc
 install -m 0644 %{SOURCE18} %{buildroot}%{_kde5_sysconfdir}/xdg/kiorc
 install -m 0644 %{SOURCE19} %{buildroot}%{_kde5_sysconfdir}/xdg/dolphinrc
+install -m 0644 %{SOURCE20} %{buildroot}%{_kde5_sysconfdir}/xdg/kdebugrc
 
 %files
 %{_kde5_sysconfdir}/xdg/*
