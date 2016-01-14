@@ -46,10 +46,11 @@ panel.hiding = "none"
 launcher = panel.addWidget("org.kde.plasma.kickoff");
 launcher.globalShortcut = "Alt+F1"
 launcher.currentConfigGroup = ["General"];
-launcher.writeConfig("customButtonImage", "file:///usr/share/icons/openmandriva.svg");
-launcher.writeConfig("favorites", "preferred://browser,org.kde.kmail.desktop,org.kde.konversation.desktop,org.kde.dolphin.desktop,org.kde.kate.desktop,org.kde.konsole.desktop,systemsettings.desktop,openmandriva-drakconf.desktop");
-launcher.writeConfig("showAppsByName", "true");
-launcher.writeConfig("useCustomButtonImage", "true");
+// (tpg) icon and favourites are hardcoded in plasma-desktop
+//launcher.writeConfig("customButtonImage", "file:///usr/share/icons/openmandriva.svg");
+//launcher.writeConfig("favorites", "preferred://browser,org.kde.kmail.desktop,org.kde.konversation.desktop,org.kde.dolphin.desktop,org.kde.kate.desktop,org.kde.konsole.desktop,systemsettings.desktop,openmandriva-drakconf.desktop");
+//launcher.writeConfig("useCustomButtonImage", "true");
+launcher.writeConfig("showAppsByName", "false");
 launcher.reloadConfig();
 
 tasks = panel.addWidget("org.kde.plasma.taskmanager");
