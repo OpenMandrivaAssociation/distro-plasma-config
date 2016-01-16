@@ -30,6 +30,7 @@ Source20:	qtlogging.ini
 
 BuildRequires:	cmake(ECM)
 Requires:	breeze
+Requires:	breeze-kde4
 Requires:	breeze-gtk
 Requires:	breeze-icons
 Provides:	kde4-config-file
