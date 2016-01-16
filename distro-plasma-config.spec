@@ -33,6 +33,7 @@ Requires:	breeze
 Requires:	breeze-kde4
 Requires:	breeze-gtk
 Requires:	breeze-icons
+Requires(post,postun): pam
 Provides:	kde4-config-file
 Provides:	distro-kde4-config-OpenMandriva = 2015.0
 Provides:	distro-kde4-config-OpenMandriva-common = 2015.0
