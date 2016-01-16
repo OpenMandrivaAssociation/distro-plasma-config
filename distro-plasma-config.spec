@@ -79,6 +79,20 @@ install -m 0644 %{SOURCE18} %{buildroot}%{_kde5_sysconfdir}/xdg/kiorc
 install -m 0644 %{SOURCE19} %{buildroot}%{_kde5_sysconfdir}/xdg/dolphinrc
 install -m 0644 %{SOURCE20} %{buildroot}%{_kde5_sysconfdir}/xdg/QtProject/qtlogging.ini
 
+%post
+if grep -q "GTK_THEME" %{_sysconfdir}/environment ; then
+    sed -i -e "s/^GTK_THEME=.*/GTK_THEME=Breeze/g" %{_sysconfdir}/environment
+else
+    echo "GTK_THEME=Breeze" >> %{_sysconfdir}/environment
+fi
+
+%postun
+if [ $1 -eq 0 ] ; then
+    if grep -q "GTK_THEME=Breeze" %{_sysconfdir}/environment ; then
+	sed -i -e "s/^GTK_THEME=Breeze//g" %{_sysconfdir}/environment
+    fi
+fi
+
 %files
 %{_kde5_sysconfdir}/xdg/*
 %{_kde5_datadir}/kservices5/plasma-layout-template-org.openmandriva.plasma.desktop.defaultPanel.desktop
