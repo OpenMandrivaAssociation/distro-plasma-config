@@ -1,7 +1,7 @@
 Summary:	Plasma desktop configuration
 Name:		distro-plasma-config
 Version:	0.1
-Release:	0.21
+Release:	0.22
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		%{disturl}
