@@ -63,6 +63,20 @@ EOF
 chmod +x $HOME/.config/plasma-workspace/env/setup_recentdocuments.sh
 fi
 
+# (tpg) enable xscreensaver
+if [ ! -f "$HOME"/.config/autostart/xscreensaver.desktop -a -x "$(which xscreensaver)" ]; then
+cat > "$HOME"/.config/autostart/xscreensaver.desktop << "EOF"
+[Desktop Entry]
+Name=XScreenSaver
+Exec=xscreensaver -nosplash
+Icon=xscreensaver
+Terminal=False
+Type=Application
+X-KDE-StartupNotify=False
+OnlyShowIn=KDE;
+EOF
+fi
+
 #(tpg) add special icons on DESKTOP
 USER_DESKTOP=`xdg-user-dir DESKTOP`
 if [ ! -e $USER_DESKTOP/om-welcome.desktop ]; then
