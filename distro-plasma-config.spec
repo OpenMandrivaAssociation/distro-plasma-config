@@ -1,7 +1,7 @@
 Summary:	Plasma desktop configuration
 Name:		distro-plasma-config
 Version:	0.2
-Release:	0.1
+Release:	0.2
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		%{disturl}
@@ -26,6 +26,7 @@ Source17:	ksmserverrc
 Source18:	kiorc
 Source19:	dolphinrc
 Source20:	kded_device_automounterrc
+Source21:	Sonnet.conf
 # (tpg) disable debug in Qt5 apps
 Source100:	qtlogging.ini
 
@@ -53,6 +54,7 @@ Plasma desktop configuration.
 
 %install
 mkdir -p %{buildroot}%{_kde5_sysconfdir}/xdg
+mkdir -p %{buildroot}%{_kde5_sysconfdir}/xdg/KDE
 mkdir -p %{buildroot}%{_kde5_sysconfdir}/xdg/QtProject
 mkdir -p %{buildroot}%{_kde5_sysconfdir}/xdg/plasma-workspace/env
 mkdir -p %{buildroot}%{_kde5_datadir}/kservices5
@@ -80,6 +82,7 @@ install -m 0644 %{SOURCE17} %{buildroot}%{_kde5_sysconfdir}/xdg/ksmserverrc
 install -m 0644 %{SOURCE18} %{buildroot}%{_kde5_sysconfdir}/xdg/kiorc
 install -m 0644 %{SOURCE19} %{buildroot}%{_kde5_sysconfdir}/xdg/dolphinrc
 install -m 0644 %{SOURCE20} %{buildroot}%{_kde5_sysconfdir}/xdg/kded_device_automounterrc
+install -m 0644 %{SOURCE20} %{buildroot}%{_kde5_sysconfdir}/xdg/KDE/Sonnet.conf
 install -m 0644 %{SOURCE100} %{buildroot}%{_kde5_sysconfdir}/xdg/QtProject/qtlogging.ini
 
 %post
