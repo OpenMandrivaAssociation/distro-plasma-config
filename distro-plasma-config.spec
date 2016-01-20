@@ -1,7 +1,7 @@
 Summary:	Plasma desktop configuration
 Name:		distro-plasma-config
-Version:	0.1
-Release:	0.23
+Version:	0.2
+Release:	0.1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		%{disturl}
@@ -25,8 +25,9 @@ Source16:	kcm-about-distrorc
 Source17:	ksmserverrc
 Source18:	kiorc
 Source19:	dolphinrc
+Source20:	kded_device_automounterrc
 # (tpg) disable debug in Qt5 apps
-Source20:	qtlogging.ini
+Source100:	qtlogging.ini
 
 BuildRequires:	cmake(ECM)
 Requires:	breeze
@@ -78,7 +79,8 @@ install -m 0644 %{SOURCE16} %{buildroot}%{_kde5_sysconfdir}/xdg/kcm-about-distro
 install -m 0644 %{SOURCE17} %{buildroot}%{_kde5_sysconfdir}/xdg/ksmserverrc
 install -m 0644 %{SOURCE18} %{buildroot}%{_kde5_sysconfdir}/xdg/kiorc
 install -m 0644 %{SOURCE19} %{buildroot}%{_kde5_sysconfdir}/xdg/dolphinrc
-install -m 0644 %{SOURCE20} %{buildroot}%{_kde5_sysconfdir}/xdg/QtProject/qtlogging.ini
+install -m 0644 %{SOURCE20} %{buildroot}%{_kde5_sysconfdir}/xdg/kded_device_automounterrc
+install -m 0644 %{SOURCE100} %{buildroot}%{_kde5_sysconfdir}/xdg/QtProject/qtlogging.ini
 
 %post
 if grep -q "GTK_THEME" %{_sysconfdir}/environment ; then

@@ -6,7 +6,7 @@
 
 KRCFG="$(which kreadconfig5)"
 
-if [ ! -z "$KRCFG" ]; then # Check if kde is installed, otherwise do nothing
+if [ ! -z "$KRCFG" ]; then # Check if Plasma is installed, otherwise do nothing
 
 FIRSTRUN=$(kreadconfig5 --group "OpenMandriva" --key "FirstRun" --default "true")
 
@@ -16,7 +16,7 @@ if [ ! -f "$HOME/.config/autostart-scripts/gpg-agent-startup.sh" ]; then
 mkdir -p $HOME/.config/autostart-scripts
 cat > $HOME/.config/autostart-scripts/gpg-agent-startup.sh << "EOF"
 #!/bin/sh
-gpg-agent --daemon --use-standard-socket --write-env-file "$GPGAGENTINFO"
+gpg-agent --daemon
 EOF
 fi
 
@@ -65,6 +65,7 @@ fi
 
 # (tpg) enable xscreensaver
 if [ ! -f "$HOME"/.config/autostart/xscreensaver.desktop -a -x "$(which xscreensaver)" ]; then
+mkdir -p "$HOME"/.config/autostart
 cat > "$HOME"/.config/autostart/xscreensaver.desktop << "EOF"
 [Desktop Entry]
 Name=XScreenSaver
@@ -102,7 +103,7 @@ cat > $HOME/.gtkrc-2.0-kde4 << EOF
 include "/usr/share/themes/Breeze/gtk-2.0/gtkrc"
 style "user-font"
 {
-        font_name="Liberation Sans Regular"
+    font_name="Liberation Sans Regular"
 }
 widget_class "*" style "user-font"
 gtk-font-name="Liberation Sans Regular 10"
