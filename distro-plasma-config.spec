@@ -30,6 +30,7 @@ Source21:	Sonnet.conf
 Source22:	konsolerc
 # (tpg) disable debug in Qt5 apps
 Source100:	qtlogging.ini
+Source101:	OMV.profile
 
 BuildRequires:	cmake(ECM)
 Requires:	breeze
@@ -61,6 +62,7 @@ mkdir -p %{buildroot}%{_kde5_sysconfdir}/xdg/plasma-workspace/env
 mkdir -p %{buildroot}%{_kde5_datadir}/kservices5
 mkdir -p %{buildroot}%{_kde5_datadir}/plasma/shells/org.kde.plasma.desktop/contents
 mkdir -p %{buildroot}%{_kde5_datadir}/plasma/layout-templates/org.openmandriva.plasma.desktop.defaultPanel/contents
+mkdir -p %{buildroot}%{_datadir}/konsole
 install -m 0644 %{SOURCE0} %{buildroot}%{_kde5_sysconfdir}/xdg/kcmdisplayrc
 install -m 0644 %{SOURCE1} %{buildroot}%{_kde5_sysconfdir}/xdg/kcmfonts
 install -m 0644 %{SOURCE2} %{buildroot}%{_kde5_sysconfdir}/xdg/kcminputrc
@@ -86,6 +88,7 @@ install -m 0644 %{SOURCE20} %{buildroot}%{_kde5_sysconfdir}/xdg/kded_device_auto
 install -m 0644 %{SOURCE21} %{buildroot}%{_kde5_sysconfdir}/xdg/KDE/Sonnet.conf
 install -m 0644 %{SOURCE22} %{buildroot}%{_kde5_sysconfdir}/xdg/konsolerc
 install -m 0644 %{SOURCE100} %{buildroot}%{_kde5_sysconfdir}/xdg/QtProject/qtlogging.ini
+install -m 0644 %{SOURCE101} %{buildroot}%{_datadir}/konsole/OMV.profile
 
 %post
 if grep -q "GTK_THEME" %{_sysconfdir}/environment ; then
@@ -103,6 +106,7 @@ fi
 
 %files
 %{_kde5_sysconfdir}/xdg/*
+%{_datadir}/konsole/OMV.profile
 %{_kde5_datadir}/kservices5/plasma-layout-template-org.openmandriva.plasma.desktop.defaultPanel.desktop
 %{_kde5_datadir}/plasma/layout-templates/org.openmandriva.plasma.desktop.defaultPanel/metadata.desktop
 %{_kde5_datadir}/plasma/layout-templates/org.openmandriva.plasma.desktop.defaultPanel/contents/layout.js
