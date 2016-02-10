@@ -11,18 +11,17 @@ for (var i = 0; i < screenCount; ++i) {
     for( var j = 0; j < desktopsArray.length; j++) {
         desktopsArray[j].wallpaperPlugin = 'org.kde.image'
         desktopsArray[j].wallpaperMode = 'SingleImage'
-        desktopsArray[j].currentConfigGroup = new Array("General");
-        desktopsArray[j].writeConfig("pressToMove",true);
-        desktopsArray[j].writeConfig("showToolbox",false);
+        desktopsArray[j].currentConfigGroup = new Array("General")
+        desktopsArray[j].writeConfig("pressToMove",true)
+        desktopsArray[j].writeConfig("showToolbox",false)
         desktopsArray[j].writeConfig("toolTips", "true")
-        desktopsArray[j].writeConfig("selectionMarkers",false);
-        desktopsArray[j].writeConfig("sortMode","-1");
-        desktopsArray[j].currentConfigGroup = new Array("Wallpaper", "org.kde.image", "General");
-        desktopsArray[j].writeConfig("Image", "file:///usr/share/mdk/backgrounds/default.png");
+        desktopsArray[j].writeConfig("selectionMarkers",false)
+        desktopsArray[j].writeConfig("sortMode","-1")
+        desktopsArray[j].currentConfigGroup = new Array("Wallpaper", "org.kde.image", "General")
+        desktopsArray[j].writeConfig("Image", "file:///usr/share/mdk/backgrounds/default.png")
         desktopsArray[j].writeConfig("FillMode","2")
-        desktopsArray[j].reloadConfig();
     }
- 
+
 // Create more panels for other screens
     if (i > 0){
         var panel = new Panel
@@ -34,6 +33,6 @@ for (var i = 0; i < screenCount; ++i) {
     }
 }
 
-sleep(0.5);
+sleep(0.5)
 // lock desktop
 locked = false;
