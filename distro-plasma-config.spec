@@ -1,7 +1,7 @@
 Summary:	Plasma desktop configuration
 Name:		distro-plasma-config
 Version:	0.2
-Release:	0.6
+Release:	0.7
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		%{disturl}
@@ -28,6 +28,7 @@ Source19:	dolphinrc
 Source20:	kded_device_automounterrc
 Source21:	Sonnet.conf
 Source22:	konsolerc
+Source23:	klaunchrc
 # (tpg) disable debug in Qt5 apps
 Source100:	qtlogging.ini
 Source101:	OMV.profile
@@ -87,6 +88,7 @@ install -m 0644 %{SOURCE19} %{buildroot}%{_kde5_sysconfdir}/xdg/dolphinrc
 install -m 0644 %{SOURCE20} %{buildroot}%{_kde5_sysconfdir}/xdg/kded_device_automounterrc
 install -m 0644 %{SOURCE21} %{buildroot}%{_kde5_sysconfdir}/xdg/KDE/Sonnet.conf
 install -m 0644 %{SOURCE22} %{buildroot}%{_kde5_sysconfdir}/xdg/konsolerc
+install -m 0644 %{SOURCE23} %{buildroot}%{_kde5_sysconfdir}/xdg/klaunchrc
 install -m 0644 %{SOURCE100} %{buildroot}%{_kde5_sysconfdir}/xdg/QtProject/qtlogging.ini
 install -m 0644 %{SOURCE101} %{buildroot}%{_datadir}/konsole/OMV.profile
 
