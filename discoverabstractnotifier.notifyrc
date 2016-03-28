@@ -1,0 +1,6 @@
+[Event/Update]
+Action=Sound|Popup
+Execute=
+Logfile=
+Sound=/usr/share/sounds/KDE-Sys-Question.ogg
+TTS=

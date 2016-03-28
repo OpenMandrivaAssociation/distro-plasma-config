@@ -137,7 +137,8 @@ gtk-font-name=Liberation Sans Regular 10
 gtk-theme-name=Breeze
 gtk-icon-theme-name=breeze
 gtk-fallback-icon-theme=hicolor
-gtk-toolbar-style=GTK_TOOLBAR_ICONS
+gtk-cursor-theme-name=breeze_cursors
+gtk-toolbar-style=GTK_TOOLBAR_BOTH_HORIZ
 gtk-menu-images=1
 gtk-button-images=1
 EOF

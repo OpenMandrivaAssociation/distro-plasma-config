@@ -1,7 +1,7 @@
 Summary:	Plasma desktop configuration
 Name:		distro-plasma-config
 Version:	0.2
-Release:	0.7
+Release:	0.8
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		%{disturl}
@@ -29,6 +29,8 @@ Source20:	kded_device_automounterrc
 Source21:	Sonnet.conf
 Source22:	konsolerc
 Source23:	klaunchrc
+Source24:	discoverabstractnotifier.notifyrc
+Source25:	plasma_workspace.notifyrc
 # (tpg) disable debug in Qt5 apps
 Source100:	qtlogging.ini
 Source101:	OMV.profile
@@ -89,6 +91,8 @@ install -m 0644 %{SOURCE20} %{buildroot}%{_kde5_sysconfdir}/xdg/kded_device_auto
 install -m 0644 %{SOURCE21} %{buildroot}%{_kde5_sysconfdir}/xdg/KDE/Sonnet.conf
 install -m 0644 %{SOURCE22} %{buildroot}%{_kde5_sysconfdir}/xdg/konsolerc
 install -m 0644 %{SOURCE23} %{buildroot}%{_kde5_sysconfdir}/xdg/klaunchrc
+install -m 0644 %{SOURCE24} %{buildroot}%{_kde5_sysconfdir}/xdg/discoverabstractnotifier.notifyrc
+install -m 0644 %{SOURCE25} %{buildroot}%{_kde5_sysconfdir}/xdg/plasma_workspace.notifyrc
 install -m 0644 %{SOURCE100} %{buildroot}%{_kde5_sysconfdir}/xdg/QtProject/qtlogging.ini
 install -m 0644 %{SOURCE101} %{buildroot}%{_datadir}/konsole/OMV.profile
 
@@ -102,7 +106,7 @@ fi
 %postun
 if [ $1 -eq 0 ] ; then
     if grep -q "GTK_THEME=Breeze" %{_sysconfdir}/environment ; then
-	sed -i -e "s/^GTK_THEME=Breeze//g" %{_sysconfdir}/environment
+    sed -i -e "s/^GTK_THEME=Breeze//g" %{_sysconfdir}/environment
     fi
 fi
 
