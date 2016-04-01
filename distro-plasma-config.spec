@@ -1,7 +1,7 @@
 Summary:	Plasma desktop configuration
 Name:		distro-plasma-config
-Version:	0.2
-Release:	0.9
+Version:	0.3
+Release:	0.1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		%{disturl}
@@ -106,7 +106,7 @@ fi
 %postun
 if [ $1 -eq 0 ] ; then
     if grep -q "GTK_THEME=Breeze" %{_sysconfdir}/environment ; then
-    sed -i -e "s/^GTK_THEME=Breeze//g" %{_sysconfdir}/environment
+	sed -i -e "s/^GTK_THEME=Breeze//g" %{_sysconfdir}/environment
     fi
 fi
 
