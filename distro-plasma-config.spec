@@ -1,7 +1,7 @@
 Summary:	Plasma desktop configuration
 Name:		distro-plasma-config
 Version:	0.3
-Release:	0.3
+Release:	0.4
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		%{disturl}
@@ -97,10 +97,9 @@ install -m 0644 %{SOURCE100} %{buildroot}%{_kde5_sysconfdir}/xdg/QtProject/qtlog
 install -m 0644 %{SOURCE101} %{buildroot}%{_datadir}/konsole/OMV.profile
 
 %post
-if grep -q "GTK_THEME" %{_sysconfdir}/environment ; then
-    sed -i -e "s/^GTK_THEME=.*/GTK_THEME=Breeze/g" %{_sysconfdir}/environment
-else
-    echo "GTK_THEME=Breeze" >> %{_sysconfdir}/environment
+# dont set theme here as it forces it over whatever the user hasin ~/.config/gtk-3.0/settings.ini
+if grep -q "GTK_THEME=Breeze" %{_sysconfdir}/environment ; then
+        sed -i -e "s/^GTK_THEME=Breeze//g" %{_sysconfdir}/environment
 fi
 
 %postun
