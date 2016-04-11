@@ -123,10 +123,8 @@ EOF
 mkdir -p $HOME/.config/plasma-workspace/env
 cat >$HOME/.config/plasma-workspace/env/gtk-engines.sh <<EOF
 export GTK2_RC_FILES=$HOME/.gtkrc-2.0-kde4
-export GTK_THEME=Breeze
 EOF
     export GTK2_RC_FILES=$HOME/.gtkrc-2.0-kde4
-    export GTK_THEME=Breeze
 fi
 
 if [ ! -f "$HOME/.config/gtk-3.0/settings.ini" ]; then
