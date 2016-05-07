@@ -1,7 +1,7 @@
 Summary:	Plasma desktop configuration
 Name:		distro-plasma-config
 Version:	0.3
-Release:	0.4
+Release:	0.5
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		%{disturl}
@@ -48,6 +48,8 @@ Obsoletes:	distro-kde4-config-OpenMandriva < 2015.0
 Obsoletes:	distro-kde4-config-OpenMandriva-common < 2015.0
 Provides:	mandriva-kde4-config = 2014.0
 Obsoletes:	mandriva-kde4-config < 2014.0
+Provides:	distro-kde4-config-common = 2015.0
+Obsoletes:	distro-kde4-config-common < 2015.0
 BuildArch:	noarch
 
 %description
