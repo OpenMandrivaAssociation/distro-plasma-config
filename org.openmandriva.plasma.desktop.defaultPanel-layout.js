@@ -42,7 +42,7 @@ panel.alignment = "left";
 panel.hiding = "none";
 
 // by default kicker is used
-var launcher = panel.addWidget("org.kde.plasma.kicker")
+var launcher = panel.addWidget("org.kde.plasma.kickoff")
 launcher.currentConfigGroup = ["Shortcuts"]
 launcher.writeConfig("global", "Alt+F1")
 launcher.currentConfigGroup = ["General"]
