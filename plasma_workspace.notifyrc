@@ -2,12 +2,12 @@
 Action=Sound
 Execute=
 Logfile=
-Sound=/usr/share/sounds/KDE-Sys-Log-Out.ogg
+Sound=KDE-Sys-Log-Out.ogg
 TTS=
 
 [Event/startkde]
 Action=Sound
 Execute=
 Logfile=
-Sound=/usr/share/sounds/KDE-Sys-Log-In.ogg
+Sound=KDE-Sys-Log-In.ogg
 TTS=
