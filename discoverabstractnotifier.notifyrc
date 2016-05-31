@@ -2,5 +2,5 @@
 Action=Sound|Popup
 Execute=
 Logfile=
-Sound=/usr/share/sounds/KDE-Sys-Question.ogg
+Sound=Oxygen-Sys-Question.ogg
 TTS=
