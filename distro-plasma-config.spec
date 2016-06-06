@@ -1,7 +1,7 @@
 Summary:	Plasma desktop configuration
 Name:		distro-plasma-config
 Version:	0.4
-Release:	0.1
+Release:	0.2
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		%{disturl}
@@ -40,6 +40,7 @@ Requires:	breeze
 Requires:	breeze-kde4
 Requires:	breeze-gtk
 Requires:	breeze-icons
+Requires:	noto-sans-fonts
 Requires(post,postun): pam
 Provides:	kde4-config-file
 Provides:	distro-kde4-config-OpenMandriva = 2015.0

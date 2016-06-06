@@ -112,10 +112,10 @@ cat > $HOME/.gtkrc-2.0-kde4 << EOF
 include "/usr/share/themes/Breeze/gtk-2.0/gtkrc"
 style "user-font"
 {
-    font_name="Liberation Sans Regular"
+    font_name="Noto Sans Regular"
 }
 widget_class "*" style "user-font"
-gtk-font-name="Liberation Sans Regular 10"
+gtk-font-name="Noto Sans Regular 10"
 gtk-theme-name="Breeze"
 gtk-icon-theme-name="breeze"
 gtk-fallback-icon-theme="hicolor"
@@ -135,7 +135,7 @@ if [ ! -f "$HOME/.config/gtk-3.0/settings.ini" ]; then
     mkdir -p $HOME/.config/gtk-3.0
 cat > $HOME/.config/gtk-3.0/settings.ini << EOF
 [Settings]
-gtk-font-name=Liberation Sans Regular 10
+gtk-font-name=Noto Sans Regular 10
 gtk-theme-name=Breeze
 gtk-icon-theme-name=breeze
 gtk-fallback-icon-theme=hicolor
