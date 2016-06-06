@@ -82,18 +82,22 @@ fi
 USER_DESKTOP=`xdg-user-dir DESKTOP`
 if [ ! -e $USER_DESKTOP/om-welcome.desktop -a -e /usr/share/applications/om-welcome.desktop ]; then
     cp -f /usr/share/applications/om-welcome.desktop $USER_DESKTOP 2> /dev/null
+    chmod +x $USER_DESKTOP/om-welcome.desktop ||:
 fi
 
 if [ ! -e $USER_DESKTOP/join.desktop -a -e /usr/share/applications/join.desktop ]; then
     cp -f /usr/share/applications/join.desktop $USER_DESKTOP 2> /dev/null
+    chmod +x $USER_DESKTOP/join.desktop ||:
 fi
 
 if [ ! -e $USER_DESKTOP/donate.desktop -a -e /usr/share/applications/donate.desktop ]; then
     cp -f /usr/share/applications/donate.desktop $USER_DESKTOP 2> /dev/null
+    chmod +x $USER_DESKTOP/donate.desktop ||:
 fi
 
 if [ ! -e $USER_DESKTOP/calamares.desktop -a -e /usr/share/applications/calamares.desktop ]; then
     cp -f /usr/share/applications/calamares.desktop $USER_DESKTOP 2> /dev/null
+    chmod +x $USER_DESKTOP/calamares.desktop ||:
 fi
 
 fi
