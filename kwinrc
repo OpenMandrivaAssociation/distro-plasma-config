@@ -16,7 +16,7 @@ UnredirectFullscreen=false
 XRenderSmoothScale=false
 
 [Effect-Cube]
-BorderActivate=0
+BorderActivate=9
 BorderActivateCylinder=9
 BorderActivateSphere=9
 CapPath=/usr/share/icons/openmandriva.svg

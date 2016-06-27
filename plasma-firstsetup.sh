@@ -11,57 +11,6 @@ if [ ! -z "$KRCFG" ]; then # Check if Plasma is installed, otherwise do nothing
 FIRSTRUN=$(kreadconfig5 --group "OpenMandriva" --key "FirstRun" --default "true")
 
 if [ "$FIRSTRUN" = "true" ]; then
-#(tpg) set up gpg-agent-startup
-if [ ! -f "$HOME/.config/autostart-scripts/gpg-agent-startup.sh" ]; then
-mkdir -p $HOME/.config/autostart-scripts
-cat > $HOME/.config/autostart-scripts/gpg-agent-startup.sh << "EOF"
-#!/bin/sh
-gpg-agent --daemon
-EOF
-fi
-
-#(tpg) set up ssh-agent-startup
-if [ ! -f "$HOME/.config/autostart-scripts/ssh-agent-startup.sh" ]; then
-mkdir -p $HOME/.config/autostart-scripts
-cat > $HOME/.config/autostart-scripts/ssh-agent-startup.sh << "EOF"
-#!/bin/sh
-SSH_AGENT=/usr/bin/ssh-agent
-## Run ssh-agent only if not already running, and available
-if [ -x "${SSH_AGENT}" ] ; then
-    if [ -z "${SSH_AGENT_PID}" ]; then
-	eval "$(${SSH_AGENT} -s)"
-    fi
-fi
-EOF
-fi
-
-#(tpg) set up ssh-agent-shutdown
-if [ ! -f "$HOME/.config/plasma-workspace/shutdown/ssh-agent-shutdown.sh" ]; then
-mkdir -p $HOME/.config/plasma-workspace/shutdown
-cat > $HOME/.config/plasma-workspace/shutdown/ssh-agent-shutdown.sh << "EOF"
-#!/bin/sh
-if [ -n "${SSH_AGENT_PID}" ]; then
-kill ${SSH_AGENT_PID}
-unset SSH_AGENT_PID SSH_AUTH_SOCK
-fi
-EOF
-fi
-
-#(tpg) fix missing recent documents
-# https://issues.openmandriva.org/show_bug.cgi?id=1378
-if [ ! -f "$HOME/.config/plasma-workspace/env/setup_recentdocuments.sh" ]; then
-mkdir -p $HOME/.config/plasma-workspace/env
-cat > $HOME/.config/plasma-workspace/env/setup_recentdocuments.sh << "EOF"
-#!/bin/sh
-if [ ! -L $HOME/.kde4/share/apps/RecentDocuments ] && [ -d $HOME/.kde4/share/apps/RecentDocuments ]; then
-    rm -rf $HOME/.kde4/share/apps/RecentDocuments
-fi
-
-[ ! -d $HOME/.kde4/share/apps ] && mkdir -p $HOME/.kde4/share/apps
-ln -sf $HOME/.local/share/RecentDocuments $HOME/.kde4/share/apps/RecentDocuments
-EOF
-chmod +x $HOME/.config/plasma-workspace/env/setup_recentdocuments.sh
-fi
 
 # (tpg) enable xscreensaver
 if [ ! -f "$HOME"/.config/autostart/xscreensaver.desktop -a -x "$(which xscreensaver)" ]; then
@@ -124,12 +73,7 @@ gtk-menu-images=1
 gtk-button-images=1
 EOF
 
-mkdir -p $HOME/.config/plasma-workspace/env
-cat >$HOME/.config/plasma-workspace/env/gtk-engines.sh <<EOF
-export GTK2_RC_FILES=$HOME/.gtkrc-2.0-kde4
-EOF
-    export GTK2_RC_FILES=$HOME/.gtkrc-2.0-kde4
-fi
+fi #FIRSTRUN
 
 if [ ! -f "$HOME/.config/gtk-3.0/settings.ini" ]; then
     mkdir -p $HOME/.config/gtk-3.0

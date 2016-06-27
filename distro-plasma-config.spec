@@ -1,7 +1,7 @@
 Summary:	Plasma desktop configuration
 Name:		distro-plasma-config
-Version:	0.4
-Release:	0.2
+Version:	0.5
+Release:	0.1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		%{disturl}
@@ -31,6 +31,13 @@ Source22:	konsolerc
 Source23:	klaunchrc
 Source24:	discoverabstractnotifier.notifyrc
 Source25:	plasma_workspace.notifyrc
+Source26:	gtk-engines.sh
+Source27:	ssh-agent-startup.sh
+Source28:	gpg-agent-startup.sh
+Source29:	setup_recentdocuments.sh
+Source30:	ssh-agent-shutdown.sh
+Source31:	gpg-agent-shutdown.sh
+
 # (tpg) disable debug in Qt5 apps
 Source100:	qtlogging.ini
 Source101:	OMV.profile
@@ -65,6 +72,7 @@ mkdir -p %{buildroot}%{_kde5_sysconfdir}/xdg
 mkdir -p %{buildroot}%{_kde5_sysconfdir}/xdg/KDE
 mkdir -p %{buildroot}%{_kde5_sysconfdir}/xdg/QtProject
 mkdir -p %{buildroot}%{_kde5_sysconfdir}/xdg/plasma-workspace/env
+mkdir -p %{buildroot}%{_kde5_sysconfdir}/xdg/plasma-workspace/shutdown
 mkdir -p %{buildroot}%{_kde5_datadir}/kservices5
 mkdir -p %{buildroot}%{_kde5_datadir}/plasma/shells/org.kde.plasma.desktop/contents
 mkdir -p %{buildroot}%{_kde5_datadir}/plasma/layout-templates/org.openmandriva.plasma.desktop.defaultPanel/contents
@@ -84,7 +92,7 @@ install -m 0644 %{SOURCE10} %{buildroot}%{_kde5_sysconfdir}/xdg/plasmarc
 install -m 0644 %{SOURCE11} %{buildroot}%{_kde5_sysconfdir}/xdg/startupconfig
 install -m 0644 %{SOURCE12} %{buildroot}%{_kde5_sysconfdir}/xdg/startupconfigfiles
 install -m 0644 %{SOURCE13} %{buildroot}%{_kde5_sysconfdir}/xdg/startupconfigkeys
-install -m 0755 %{SOURCE14} %{buildroot}%{_kde5_sysconfdir}/xdg/plasma-workspace/env/plasma-firstsetup.sh
+install -m 0644 %{SOURCE14} %{buildroot}%{_kde5_sysconfdir}/xdg/plasma-workspace/env/plasma-firstsetup.sh
 install -m 0644 %{SOURCE15} %{buildroot}%{_kde5_sysconfdir}/xdg/baloofilerc
 install -m 0644 %{SOURCE16} %{buildroot}%{_kde5_sysconfdir}/xdg/kcm-about-distrorc
 install -m 0644 %{SOURCE17} %{buildroot}%{_kde5_sysconfdir}/xdg/ksmserverrc
@@ -96,13 +104,20 @@ install -m 0644 %{SOURCE22} %{buildroot}%{_kde5_sysconfdir}/xdg/konsolerc
 install -m 0644 %{SOURCE23} %{buildroot}%{_kde5_sysconfdir}/xdg/klaunchrc
 install -m 0644 %{SOURCE24} %{buildroot}%{_kde5_sysconfdir}/xdg/discoverabstractnotifier.notifyrc
 install -m 0644 %{SOURCE25} %{buildroot}%{_kde5_sysconfdir}/xdg/plasma_workspace.notifyrc
+install -m 0644 %{SOURCE26} %{buildroot}%{_kde5_sysconfdir}/xdg/plasma-workspace/env/gtk-engines.sh
+install -m 0644 %{SOURCE27} %{buildroot}%{_kde5_sysconfdir}/xdg/plasma-workspace/env/ssh-agent-startup.sh
+install -m 0644 %{SOURCE28} %{buildroot}%{_kde5_sysconfdir}/xdg/plasma-workspace/env/gpg-agent-startup.sh
+install -m 0644 %{SOURCE29} %{buildroot}%{_kde5_sysconfdir}/xdg/plasma-workspace/env/setup_recentdocuments.sh
+install -m 0644 %{SOURCE30} %{buildroot}%{_kde5_sysconfdir}/xdg/plasma-workspace/shutdown/ssh-agent-shutdown.sh
+install -m 0644 %{SOURCE31} %{buildroot}%{_kde5_sysconfdir}/xdg/plasma-workspace/shutdown/gpg-agent-shutdown.sh
+
 install -m 0644 %{SOURCE100} %{buildroot}%{_kde5_sysconfdir}/xdg/QtProject/qtlogging.ini
 install -m 0644 %{SOURCE101} %{buildroot}%{_datadir}/konsole/OMV.profile
 
 %post
 # dont set theme here as it forces it over whatever the user hasin ~/.config/gtk-3.0/settings.ini
 if grep -q "GTK_THEME=Breeze" %{_sysconfdir}/environment ; then
-        sed -i -e "s/^GTK_THEME=Breeze//g" %{_sysconfdir}/environment
+    sed -i -e "s/^GTK_THEME=Breeze//g" %{_sysconfdir}/environment
 fi
 
 %postun
