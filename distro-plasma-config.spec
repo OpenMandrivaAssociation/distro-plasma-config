@@ -92,7 +92,7 @@ install -m 0644 %{SOURCE10} %{buildroot}%{_kde5_sysconfdir}/xdg/plasmarc
 install -m 0644 %{SOURCE11} %{buildroot}%{_kde5_sysconfdir}/xdg/startupconfig
 install -m 0644 %{SOURCE12} %{buildroot}%{_kde5_sysconfdir}/xdg/startupconfigfiles
 install -m 0644 %{SOURCE13} %{buildroot}%{_kde5_sysconfdir}/xdg/startupconfigkeys
-install -m 0755 %{SOURCE14} %{buildroot}%{_kde5_sysconfdir}/xdg/plasma-workspace/env/plasma-firstsetup.sh
+install -m 0644 %{SOURCE14} %{buildroot}%{_kde5_sysconfdir}/xdg/plasma-workspace/env/plasma-firstsetup.sh
 install -m 0644 %{SOURCE15} %{buildroot}%{_kde5_sysconfdir}/xdg/baloofilerc
 install -m 0644 %{SOURCE16} %{buildroot}%{_kde5_sysconfdir}/xdg/kcm-about-distrorc
 install -m 0644 %{SOURCE17} %{buildroot}%{_kde5_sysconfdir}/xdg/ksmserverrc
@@ -104,12 +104,12 @@ install -m 0644 %{SOURCE22} %{buildroot}%{_kde5_sysconfdir}/xdg/konsolerc
 install -m 0644 %{SOURCE23} %{buildroot}%{_kde5_sysconfdir}/xdg/klaunchrc
 install -m 0644 %{SOURCE24} %{buildroot}%{_kde5_sysconfdir}/xdg/discoverabstractnotifier.notifyrc
 install -m 0644 %{SOURCE25} %{buildroot}%{_kde5_sysconfdir}/xdg/plasma_workspace.notifyrc
-install -m 0755 %{SOURCE26} %{buildroot}%{_kde5_sysconfdir}/xdg/plasma-workspace/env/gtk-engines.sh
-install -m 0755 %{SOURCE27} %{buildroot}%{_kde5_sysconfdir}/xdg/plasma-workspace/env/ssh-agent-startup.sh
-install -m 0755 %{SOURCE28} %{buildroot}%{_kde5_sysconfdir}/xdg/plasma-workspace/env/gpg-agent-startup.sh
-install -m 0755 %{SOURCE29} %{buildroot}%{_kde5_sysconfdir}/xdg/plasma-workspace/env/setup_recentdocuments.sh
-install -m 0755 %{SOURCE30} %{buildroot}%{_kde5_sysconfdir}/xdg/plasma-workspace/shutdown/ssh-agent-shutdown.sh
-install -m 0755 %{SOURCE31} %{buildroot}%{_kde5_sysconfdir}/xdg/plasma-workspace/shutdown/gpg-agent-shutdown.sh
+install -m 0644 %{SOURCE26} %{buildroot}%{_kde5_sysconfdir}/xdg/plasma-workspace/env/gtk-engines.sh
+install -m 0644 %{SOURCE27} %{buildroot}%{_kde5_sysconfdir}/xdg/plasma-workspace/env/ssh-agent-startup.sh
+install -m 0644 %{SOURCE28} %{buildroot}%{_kde5_sysconfdir}/xdg/plasma-workspace/env/gpg-agent-startup.sh
+install -m 0644 %{SOURCE29} %{buildroot}%{_kde5_sysconfdir}/xdg/plasma-workspace/env/setup_recentdocuments.sh
+install -m 0644 %{SOURCE30} %{buildroot}%{_kde5_sysconfdir}/xdg/plasma-workspace/shutdown/ssh-agent-shutdown.sh
+install -m 0644 %{SOURCE31} %{buildroot}%{_kde5_sysconfdir}/xdg/plasma-workspace/shutdown/gpg-agent-shutdown.sh
 
 install -m 0644 %{SOURCE100} %{buildroot}%{_kde5_sysconfdir}/xdg/QtProject/qtlogging.ini
 install -m 0644 %{SOURCE101} %{buildroot}%{_datadir}/konsole/OMV.profile
