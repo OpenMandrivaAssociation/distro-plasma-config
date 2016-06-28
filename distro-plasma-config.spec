@@ -1,7 +1,7 @@
 Summary:	Plasma desktop configuration
 Name:		distro-plasma-config
 Version:	0.5
-Release:	0.1
+Release:	0.2
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		%{disturl}
@@ -32,11 +32,7 @@ Source23:	klaunchrc
 Source24:	discoverabstractnotifier.notifyrc
 Source25:	plasma_workspace.notifyrc
 Source26:	gtk-engines.sh
-Source27:	ssh-agent-startup.sh
-Source28:	gpg-agent-startup.sh
-Source29:	setup_recentdocuments.sh
-Source30:	ssh-agent-shutdown.sh
-Source31:	gpg-agent-shutdown.sh
+Source27:	setup_recentdocuments.sh
 
 # (tpg) disable debug in Qt5 apps
 Source100:	qtlogging.ini
@@ -105,11 +101,7 @@ install -m 0644 %{SOURCE23} %{buildroot}%{_kde5_sysconfdir}/xdg/klaunchrc
 install -m 0644 %{SOURCE24} %{buildroot}%{_kde5_sysconfdir}/xdg/discoverabstractnotifier.notifyrc
 install -m 0644 %{SOURCE25} %{buildroot}%{_kde5_sysconfdir}/xdg/plasma_workspace.notifyrc
 install -m 0644 %{SOURCE26} %{buildroot}%{_kde5_sysconfdir}/xdg/plasma-workspace/env/gtk-engines.sh
-install -m 0644 %{SOURCE27} %{buildroot}%{_kde5_sysconfdir}/xdg/plasma-workspace/env/ssh-agent-startup.sh
-install -m 0644 %{SOURCE28} %{buildroot}%{_kde5_sysconfdir}/xdg/plasma-workspace/env/gpg-agent-startup.sh
-install -m 0644 %{SOURCE29} %{buildroot}%{_kde5_sysconfdir}/xdg/plasma-workspace/env/setup_recentdocuments.sh
-install -m 0644 %{SOURCE30} %{buildroot}%{_kde5_sysconfdir}/xdg/plasma-workspace/shutdown/ssh-agent-shutdown.sh
-install -m 0644 %{SOURCE31} %{buildroot}%{_kde5_sysconfdir}/xdg/plasma-workspace/shutdown/gpg-agent-shutdown.sh
+install -m 0644 %{SOURCE27} %{buildroot}%{_kde5_sysconfdir}/xdg/plasma-workspace/env/setup_recentdocuments.sh
 
 install -m 0644 %{SOURCE100} %{buildroot}%{_kde5_sysconfdir}/xdg/QtProject/qtlogging.ini
 install -m 0644 %{SOURCE101} %{buildroot}%{_datadir}/konsole/OMV.profile
