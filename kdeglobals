@@ -264,7 +264,7 @@ Size=22
 [WM]
 activeBackground=71,80,87
 activeBlend=255,255,255
-activeFont=Noto Mono,10,-1,5,50,0,0,0,0,0
+activeFont=Noto Sans,10,-1,5,50,0,0,0,0,0
 activeForeground=239,240,241
 inactiveBackground=239,240,241
 inactiveBlend=75,71,67
