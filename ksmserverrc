@@ -1,6 +1,6 @@
 [General]
 confirmLogout=true
-excludeApps=
+excludeApps=hp-systray:firewall-applet
 loginMode=default
 offerShutdown=true
 shutdownType=0
