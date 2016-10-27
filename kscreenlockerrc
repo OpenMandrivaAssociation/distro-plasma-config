@@ -1,9 +1,11 @@
 [Daemon]
-Timeout=5
 Autolock=true
-LockOnResume=true
 LockGrace=5
+LockOnResume=true
+Timeout=5
 
 [Greeter]
-Theme=org.kde.breeze.desktop
-ThemeBackground=/usr/share/mdk/backgrounds/default.png
+WallpaperPlugin=org.kde.image
+
+[Greeter][Wallpaper][org.kde.image][General]
+Image=file:///usr/share/mdk/backgrounds/default.png
