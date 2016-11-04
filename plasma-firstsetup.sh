@@ -55,7 +55,7 @@ fi
 FONTS=$(kreadconfig5 --group "OpenMandriva" --key "fontsConfig" --default "false")
 
 if [ ! "$FONTS" = "true" ]; then
-    if [ ! -f "$HOME/.gtkrc-2.0-kde4" -o ! -f "$HOME/.config/plasma-workspace/env/gtk-engines.sh" ]; then
+    if [ ! -f "$HOME/.gtkrc-2.0-kde4" ]; then
 	### GTK theme apply #####
 cat > $HOME/.gtkrc-2.0-kde4 << EOF
 include "/usr/share/themes/Breeze/gtk-2.0/gtkrc"
