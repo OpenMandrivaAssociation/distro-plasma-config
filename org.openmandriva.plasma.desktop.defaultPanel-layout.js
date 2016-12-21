@@ -46,7 +46,7 @@ var launcher = panel.addWidget("org.kde.plasma.kickoff")
 launcher.currentConfigGroup = ["Shortcuts"]
 launcher.writeConfig("global", "Alt+F1")
 launcher.currentConfigGroup = ["General"]
-launcher.writeConfig("favoriteApps", "preferred://browser,org.kde.kmail.desktop,org.kde.konversation.desktop,org.kde.dolphin.desktop,org.kde.kate.desktop,org.kde.konsole.desktop,systemsettings.desktop,openmandriva-drakconf.desktop")
+launcher.writeConfig("favoriteApps", "preferred://browser,org.kde.kmail.desktop,org.kde.konversation.desktop,org.kde.dolphin.desktop,org.kde.kate.desktop,kcm_kdeconnect.desktop,org.kde.konsole.desktop,systemsettings.desktop,openmandriva-drakconf.desktop")
 launcher.writeConfig("limitDepth", true)
 launcher.writeConfig("useExtraRunners", true)
 launcher.writeConfig("alignResultsToBottom", true)
