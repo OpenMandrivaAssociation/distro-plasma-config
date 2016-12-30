@@ -4,16 +4,14 @@ Rows=2
 
 [Compositing]
 AnimationSpeed=3
-Backend=OpenGL
 GLColorCorrection=false
 GLCore=true
-GLPlatformInterface=glx
-GLPreferBufferSwap=a
 GLTextureFilter=0
-HiddenPreviews=5
 OpenGLIsUnsafe=false
-UnredirectFullscreen=false
-XRenderSmoothScale=false
+WindowsBlockCompositing=true
+
+[org.kde.kdecoration2]
+library=org.kde.breeze
 
 [Effect-Cube]
 BorderActivate=9
