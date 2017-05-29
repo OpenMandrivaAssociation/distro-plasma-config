@@ -41,8 +41,8 @@ panel.height = gridUnit * 3
 panel.alignment = "left";
 panel.hiding = "none";
 
-// by default kicker is used
-var launcher = panel.addWidget("org.kde.plasma.kickoff")
+// by default kicker is used, options are kickoff and kickerdash
+var launcher = panel.addWidget("org.kde.plasma.kicker")
 launcher.currentConfigGroup = ["Shortcuts"]
 launcher.writeConfig("global", "Alt+F1")
 launcher.currentConfigGroup = ["General"]
