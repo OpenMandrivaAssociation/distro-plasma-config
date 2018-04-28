@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 #
 # Factorize for 2015.0
@@ -10,7 +10,7 @@ if [ ! -z "$KRCFG" ]; then # Check if Plasma is installed, otherwise do nothing
 
 FIRSTRUN=$(kreadconfig5 --group "OpenMandriva" --key "FirstRun" --default "true")
 
-if [ "$FIRSTRUN" = "true" ]; then
+if [ "$FIRSTRUN" = 'true' ]; then
 
 # (tpg) enable xscreensaver
 if [ ! -f "$HOME"/.config/autostart/xscreensaver.desktop -a -x "$(which xscreensaver)" ]; then
@@ -28,25 +28,25 @@ EOF
 fi
 
 #(tpg) add special icons on DESKTOP
-USER_DESKTOP=`xdg-user-dir DESKTOP`
-if [ ! -e $USER_DESKTOP/om-welcome.desktop -a -e /usr/share/applications/om-welcome.desktop ]; then
-    cp -f /usr/share/applications/om-welcome.desktop $USER_DESKTOP 2> /dev/null
-    chmod +x $USER_DESKTOP/om-welcome.desktop ||:
+USER_DESKTOP="$(xdg-user-dir DESKTOP)"
+if [ ! -e "$USER_DESKTOP"/om-welcome.desktop ] && [ -e /usr/share/applications/om-welcome.desktop ]; then
+    cp -f /usr/share/applications/om-welcome.desktop "$USER_DESKTOP" 2> /dev/null
+    chmod +x "$USER_DESKTOP"/om-welcome.desktop ||:
 fi
 
-if [ ! -e $USER_DESKTOP/join.desktop -a -e /usr/share/applications/join.desktop ]; then
-    cp -f /usr/share/applications/join.desktop $USER_DESKTOP 2> /dev/null
-    chmod +x $USER_DESKTOP/join.desktop ||:
+if [ ! -e "$USER_DESKTOP"/join.desktop ] && [ -e /usr/share/applications/join.desktop ]; then
+    cp -f /usr/share/applications/join.desktop "$USER_DESKTOP" 2> /dev/null
+    chmod +x "$USER_DESKTOP"/join.desktop ||:
 fi
 
-if [ ! -e $USER_DESKTOP/donate.desktop -a -e /usr/share/applications/donate.desktop ]; then
-    cp -f /usr/share/applications/donate.desktop $USER_DESKTOP 2> /dev/null
-    chmod +x $USER_DESKTOP/donate.desktop ||:
+if [ ! -e "$USER_DESKTOP"/donate.desktop ] && [ -e /usr/share/applications/donate.desktop ]; then
+    cp -f /usr/share/applications/donate.desktop "$USER_DESKTOP" 2> /dev/null
+    chmod +x "$USER_DESKTOP"/donate.desktop ||:
 fi
 
-if [ ! -e $USER_DESKTOP/calamares.desktop -a -e /usr/share/applications/calamares.desktop ]; then
-    cp -f /usr/share/applications/calamares.desktop $USER_DESKTOP 2> /dev/null
-    chmod +x $USER_DESKTOP/calamares.desktop ||:
+if [ ! -e "$USER_DESKTOP"/calamares.desktop ] && [ -e /usr/share/applications/calamares.desktop ]; then
+    cp -f /usr/share/applications/calamares.desktop "$USER_DESKTOP" 2> /dev/null
+    chmod +x "$USER_DESKTOP"/calamares.desktop ||:
 fi
 
 fi
@@ -54,7 +54,7 @@ fi
 # GTK settings
 FONTS=$(kreadconfig5 --group "OpenMandriva" --key "fontsConfig" --default "false")
 
-if [ ! "$FONTS" = "true" ]; then
+if [ ! "$FONTS" = 'true' ]; then
     if [ ! -f "$HOME/.gtkrc-2.0-kde4" ]; then
 	### GTK theme apply #####
 cat > $HOME/.gtkrc-2.0-kde4 << EOF
@@ -90,9 +90,9 @@ gtk-button-images=1
 EOF
 fi
 
-if [ ! "$OLDICON" = "true" ]; then
+if [ ! "$OLDICON" = 'true' ]; then
     # We need to remove the old mdv icons ( music, video, download ) and use KDE ones instead
-    MUSICDIR=$(eval "echo $(kreadconfig5 --file $HOME/.config/user-dirs.dirs --key XDG_MUSIC_DIR)" )
+    MUSICDIR="$(eval "echo $(kreadconfig5 --file $HOME/.config/user-dirs.dirs --key XDG_MUSIC_DIR)" )"
     if [ -z "$MUSICDIR" ]; then
         MUSICDIR="$HOME/Music"
     fi
@@ -208,11 +208,11 @@ EOF
  fi
 
 # firsrun end
-if [ "$FIRSTRUN" = "true" ]; then
-        kwriteconfig5 --group "OpenMandriva" --key "FirstRun" --type "bool" "false"
+if [ "$FIRSTRUN" = 'true' ]; then
+    kwriteconfig5 --group "OpenMandriva" --key "FirstRun" --type "bool" "false"
 fi
 
 fi
 
-chmod 0666 $HOME/.face.icon
+chmod 0666 "$HOME"/.face.icon
 #end of kde check
