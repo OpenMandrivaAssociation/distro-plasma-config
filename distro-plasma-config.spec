@@ -1,7 +1,7 @@
 Summary:	Plasma desktop configuration
 Name:		distro-plasma-config
 Version:	0.6
-Release:	2
+Release:	3
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		%{disturl}
@@ -40,7 +40,6 @@ Source101:	OMV.profile
 
 BuildRequires:	cmake(ECM)
 Requires:	breeze
-Requires:	breeze-kde4
 Requires:	breeze-gtk
 Requires:	breeze-icons
 Requires:	noto-sans-fonts
