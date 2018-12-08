@@ -1,7 +1,7 @@
 Summary:	Plasma desktop configuration
 Name:		distro-plasma-config
 Version:	0.6
-Release:	6
+Release:	7
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		%{disturl}
@@ -37,8 +37,8 @@ Source27:	setup_recentdocuments.sh
 # (tpg) disable debug in Qt5 apps
 Source100:	qtlogging.ini
 Source101:	OMV.profile
-
 BuildRequires:	cmake(ECM)
+Requires:	distro-theme >= 1.4.41-4
 Requires:	breeze
 Requires:	breeze-gtk
 Requires:	breeze-icons
@@ -106,7 +106,7 @@ install -m 0644 %{SOURCE100} %{buildroot}%{_kde5_sysconfdir}/xdg/QtProject/qtlog
 install -m 0644 %{SOURCE101} %{buildroot}%{_datadir}/konsole/OMV.profile
 
 %post
-# dont set theme here as it forces it over whatever the user hasin ~/.config/gtk-3.0/settings.ini
+# dont set theme here as it forces it over whatever the user has in ~/.config/gtk-3.0/settings.ini
 if grep -q "GTK_THEME=Breeze" %{_sysconfdir}/environment ; then
     sed -i -e "s/^GTK_THEME=Breeze//g" %{_sysconfdir}/environment
 fi
