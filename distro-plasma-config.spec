@@ -20,7 +20,6 @@ Source11:	startupconfig
 Source12:	startupconfigfiles
 Source13:	startupconfigkeys
 Source14:	plasma-firstsetup.sh
-Source15:	baloofilerc
 Source16:	kcm-about-distrorc
 Source17:	ksmserverrc
 Source18:	kiorc
@@ -88,7 +87,6 @@ install -m 0644 %{SOURCE11} %{buildroot}%{_kde5_sysconfdir}/xdg/startupconfig
 install -m 0644 %{SOURCE12} %{buildroot}%{_kde5_sysconfdir}/xdg/startupconfigfiles
 install -m 0644 %{SOURCE13} %{buildroot}%{_kde5_sysconfdir}/xdg/startupconfigkeys
 install -m 0644 %{SOURCE14} %{buildroot}%{_kde5_sysconfdir}/xdg/plasma-workspace/env/plasma-firstsetup.sh
-install -m 0644 %{SOURCE15} %{buildroot}%{_kde5_sysconfdir}/xdg/baloofilerc
 install -m 0644 %{SOURCE16} %{buildroot}%{_kde5_sysconfdir}/xdg/kcm-about-distrorc
 install -m 0644 %{SOURCE17} %{buildroot}%{_kde5_sysconfdir}/xdg/ksmserverrc
 install -m 0644 %{SOURCE18} %{buildroot}%{_kde5_sysconfdir}/xdg/kiorc
