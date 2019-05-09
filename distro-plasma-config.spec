@@ -1,7 +1,7 @@
 Summary:	Plasma desktop configuration
 Name:		distro-plasma-config
 Version:	0.6
-Release:	12
+Release:	13
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		%{disturl}
@@ -31,6 +31,7 @@ Source24:	discoverabstractnotifier.notifyrc
 Source25:	plasma_workspace.notifyrc
 Source26:	gtk-engines.sh
 Source27:	setup_recentdocuments.sh
+Source28:	powermanagementprofilesrc
 
 # (tpg) disable debug in Qt5 apps
 Source100:	qtlogging.ini
@@ -97,6 +98,7 @@ install -m 0644 %{SOURCE24} %{buildroot}%{_kde5_sysconfdir}/xdg/discoverabstract
 install -m 0644 %{SOURCE25} %{buildroot}%{_kde5_sysconfdir}/xdg/plasma_workspace.notifyrc
 install -m 0644 %{SOURCE26} %{buildroot}%{_kde5_sysconfdir}/xdg/plasma-workspace/env/gtk-engines.sh
 install -m 0644 %{SOURCE27} %{buildroot}%{_kde5_sysconfdir}/xdg/plasma-workspace/env/setup_recentdocuments.sh
+install -m 0644 %{SOURCE28} %{buildroot}%{_kde5_sysconfdir}/xdg/powermanagementprofilesrc
 
 install -m 0644 %{SOURCE100} %{buildroot}%{_kde5_sysconfdir}/xdg/QtProject/qtlogging.ini
 install -m 0644 %{SOURCE101} %{buildroot}%{_datadir}/konsole/OMV.profile
