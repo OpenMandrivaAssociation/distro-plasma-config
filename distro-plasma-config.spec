@@ -118,6 +118,5 @@ fi
 %{_kde5_sysconfdir}/xdg/*
 %{_datadir}/konsole/OMV.profile
 %{_kde5_datadir}/kservices5/plasma-layout-template-org.openmandriva.plasma.desktop.defaultPanel.desktop
-%{_kde5_datadir}/plasma/layout-templates/org.openmandriva.plasma.desktop.defaultPanel/metadata.desktop
-%{_kde5_datadir}/plasma/layout-templates/org.openmandriva.plasma.desktop.defaultPanel/contents/layout.js
+%{_kde5_datadir}/plasma/layout-templates/org.openmandriva.plasma.desktop.defaultPanel
 %{_kde5_datadir}/plasma/shells/org.kde.plasma.desktop/contents/layout.js

@@ -6,24 +6,23 @@ print("Loading OpenMandriva Plasma panel configuration")
 // helper function for removing panels
 function remove()
 {
-    for (i in panelIds) {
-    panelById(panelIds[1]).remove()
-    }
+	for (i in panelIds) {
+		panelById(panelIds[1]).remove()
+	}
 }
 
 // remove already existing old panels
 function removeOldPanels()
 {
-    for (i in panelIds) {
-    p = panelById(panelIds[i])
-    if (typeof p === "undefined") {
-        print("Error: Couldn't find first panel")
-        remove()
-    }
-    else {
-        panelById(panelIds[i]).remove()
-    }
-    }
+	for (i in panelIds) {
+		p = panelById(panelIds[i])
+		if (typeof p === "undefined") {
+			print("Error: Couldn't find first panel")
+			remove()
+		} else {
+			panelById(panelIds[i]).remove()
+		}
+	}
 }
 
 // remove already existing other panels
@@ -32,8 +31,8 @@ removeOldPanels()
 // start new panel
 var panel = new Panel
 if (panelIds.length == 1) {
-// we are the only panel, so set the location for the user
-    panel.location = "bottom";
+	// we are the only panel, so set the location for the user
+	panel.location = "bottom";
 }
 
 // let's calculate desired panel height based on scren's DPI
@@ -115,7 +114,7 @@ var langIds = ["as",    // Assamese
                "zh_TW"] // Traditional Chinese
 
 if (langIds.indexOf(languageId) != -1) {
-    panel.addWidget("org.kde.plasma.kimpanel");
+	panel.addWidget("org.kde.plasma.kimpanel");
 }
 
 var systray = panel.addWidget("org.kde.plasma.systemtray")
