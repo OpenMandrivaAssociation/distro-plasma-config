@@ -1,7 +1,7 @@
 Summary:	Plasma desktop configuration
 Name:		distro-plasma-config
 Version:	0.6
-Release:	16
+Release:	17
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		%{disturl}
@@ -44,7 +44,6 @@ Requires:	breeze
 Requires:	breeze-gtk
 Requires:	breeze-icons
 Requires:	noto-sans-fonts
-Requires(post,postun): pam
 Provides:	kde4-config-file
 Provides:	distro-kde4-config-OpenMandriva = 2015.0
 Provides:	distro-kde4-config-OpenMandriva-common = 2015.0
@@ -108,24 +107,10 @@ mkdir -p %{buildroot}%{_kde5_datadir}/plasma/layout-templates/org.openmandriva.p
 install -m 0644 %{S:50} %{buildroot}%{_kde5_datadir}/plasma/layout-templates/org.openmandriva.plasma.desktop.globalMenuPanel/contents/layout.js
 install -m 0644 %{S:51} %{buildroot}%{_kde5_datadir}/plasma/layout-templates/org.openmandriva.plasma.desktop.globalMenuPanel/metadata.desktop
 
-%post
-# dont set theme here as it forces it over whatever the user has in ~/.config/gtk-3.0/settings.ini
-if grep -q "GTK_THEME=Breeze" %{_sysconfdir}/environment ; then
-    sed -i -e "s/^GTK_THEME=Breeze//g" %{_sysconfdir}/environment
-fi
-
-%postun
-if [ $1 -eq 0 ] ; then
-    if grep -q "GTK_THEME=Breeze" %{_sysconfdir}/environment ; then
-	sed -i -e "s/^GTK_THEME=Breeze//g" %{_sysconfdir}/environment
-    fi
-fi
-
 %files
 %{_kde5_sysconfdir}/xdg/*
 %{_datadir}/konsole/OMV.profile
 %{_kde5_datadir}/kservices5/plasma-layout-template-org.openmandriva.plasma.desktop.defaultPanel.desktop
 %{_kde5_datadir}/plasma/layout-templates/org.openmandriva.plasma.desktop.defaultPanel
 %{_kde5_datadir}/plasma/shells/org.kde.plasma.desktop/contents/layout.js
-
 %{_datadir}/plasma/layout-templates/org.openmandriva.plasma.desktop.globalMenuPanel
